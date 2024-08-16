@@ -1,0 +1,117 @@
+[gd_scene load_steps=16 format=3 uid="uid://dbrsc04uan3vi"]
+
+[ext_resource type="Script" path="res://scripts/Main.gd" id="1_rg8f5"]
+[ext_resource type="PackedScene" uid="uid://cwnae2n7xm8yn" path="res://prefabs/sponge.tscn" id="2_6fk1l"]
+[ext_resource type="Material" uid="uid://bi5ho73s72iha" path="res://materials/water.tres" id="2_tsmr1"]
+[ext_resource type="Texture2D" uid="uid://djnvvftm5kllv" path="res://materials/en_suite_1k.hdr" id="4_7c8vk"]
+[ext_resource type="Texture2D" uid="uid://rkg8p3noii20" path="res://materials/marble_mosaic_tiles_diff_1k.jpg" id="4_fblpx"]
+[ext_resource type="Texture2D" uid="uid://dmpkgpm2de0gb" path="res://materials/marble_mosaic_tiles_nor_gl_1k.png" id="5_dykrr"]
+[ext_resource type="Texture2D" uid="uid://d1gk6ctjcvtfq" path="res://materials/marble_mosaic_tiles_rough_1k.png" id="6_o7rfl"]
+[ext_resource type="PackedScene" uid="uid://bbv0spkb8ld7s" path="res://assets/models/light_shaft.tscn" id="8_8844k"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_sswqg"]
+size = Vector3(2, 0.5, 2)
+subdivide_width = 10
+subdivide_height = 10
+subdivide_depth = 10
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_6oywk"]
+panorama = ExtResource("4_7c8vk")
+
+[sub_resource type="Sky" id="Sky_1yurm"]
+sky_material = SubResource("PanoramaSkyMaterial_6oywk")
+
+[sub_resource type="Environment" id="Environment_15veq"]
+background_mode = 1
+background_color = Color(0.126956, 0.220906, 0.283745, 1)
+sky = SubResource("Sky_1yurm")
+ambient_light_source = 3
+ambient_light_color = Color(1, 1, 1, 1)
+reflected_light_source = 2
+fog_enabled = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_0pkqa"]
+subdivide_width = 10
+subdivide_depth = 10
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e71b8"]
+albedo_texture = ExtResource("4_fblpx")
+metallic = 0.72
+metallic_specular = 1.0
+roughness = 0.64
+roughness_texture = ExtResource("6_o7rfl")
+normal_enabled = true
+normal_texture = ExtResource("5_dykrr")
+uv1_scale = Vector3(2, 2, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fwfob"]
+size = Vector3(2, 0.1, 2)
+
+[node name="Game" type="Node3D"]
+script = ExtResource("1_rg8f5")
+
+[node name="Water" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.595939, 0, 0, 0, 1, 0, -0.16296, 0)
+mesh = SubResource("BoxMesh_sswqg")
+surface_material_override/0 = ExtResource("2_tsmr1")
+
+[node name="Sponges" type="Node3D" parent="."]
+
+[node name="Sponge" parent="Sponges" instance=ExtResource("2_6fk1l")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.54164, 0.0867666, -0.450933)
+
+[node name="Sponge2" parent="Sponges" instance=ExtResource("2_6fk1l")]
+transform = Transform3D(-0.00781982, 0, 0.0996938, 0, 0.1, 0, -0.0996938, 0, -0.00781982, -0.482431, 0.0867666, 0.583063)
+
+[node name="Sponge3" parent="Sponges" instance=ExtResource("2_6fk1l")]
+transform = Transform3D(-0.0999269, 0, 0.00382308, 0, 0.1, 0, -0.00382308, 0, -0.0999269, 0.342487, 0.0867666, 0.235686)
+
+[node name="Sponge4" parent="Sponges" instance=ExtResource("2_6fk1l")]
+transform = Transform3D(-0.0521218, 0, -0.0853423, 0, 0.1, 0, 0.0853423, 0, -0.0521218, -0.617396, 0.0867666, -0.487077)
+
+[node name="Sponge5" parent="Sponges" instance=ExtResource("2_6fk1l")]
+transform = Transform3D(-0.0521218, 0, -0.0853423, 0, 0.1, 0, 0.0853423, 0, -0.0521218, 0.158428, 0.0867666, -0.178129)
+
+[node name="Sponge6" parent="Sponges" instance=ExtResource("2_6fk1l")]
+transform = Transform3D(-0.0521218, 0, -0.0853423, 0, 0.1, 0, 0.0853423, 0, -0.0521218, -0.400287, 0.0867666, 0.123795)
+
+[node name="Sponge7" parent="Sponges" instance=ExtResource("2_6fk1l")]
+transform = Transform3D(-0.0521218, 0, -0.0853423, 0, 0.1, 0, 0.0853423, 0, -0.0521218, 0.074659, 0.0867666, 0.608193)
+
+[node name="Sponge8" parent="Sponges" instance=ExtResource("2_6fk1l")]
+transform = Transform3D(-0.0521218, 0, -0.0853423, 0, 0.1, 0, 0.0853423, 0, -0.0521218, -0.0920543, 0.0867656, -0.68125)
+
+[node name="Sponge9" parent="Sponges" instance=ExtResource("2_6fk1l")]
+transform = Transform3D(-0.0521218, 0, -0.0853423, 0, 0.1, 0, 0.0853423, 0, -0.0521218, -0.773263, 0.0867656, 0.220769)
+
+[node name="Sponge10" parent="Sponges" instance=ExtResource("2_6fk1l")]
+transform = Transform3D(-0.0521218, 0, -0.0853423, 0, 0.1, 0, 0.0853423, 0, -0.0521218, 0.4817, 0.0867656, 0.704193)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-1, 6.60788e-08, -5.72393e-08, 0, 0.654741, 0.755853, 8.74228e-08, 0.755853, -0.654741, -0.096, 2.111, -1.949)
+current = true
+fov = 39.7
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.571029, -0.625355, 0.531843, 0.439537, 0.780071, 0.445305, -0.693349, -0.0205172, 0.72031, 0, 1, 1)
+shadow_enabled = true
+shadow_bias = 0.0
+shadow_normal_bias = 0.952
+shadow_blur = 6.238
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_15veq")
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0386156, 0)
+layers = 513
+mesh = SubResource("PlaneMesh_0pkqa")
+surface_material_override/0 = SubResource("StandardMaterial3D_e71b8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0434305, 0)
+shape = SubResource("BoxShape3D_fwfob")
+
+[node name="Cursor" parent="." instance=ExtResource("8_8844k")]
