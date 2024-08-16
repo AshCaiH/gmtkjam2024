@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cwnae2n7xm8yn"]
+
+[ext_resource type="Script" path="res://scripts/Sponge.gd" id="1_koycv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3uocc"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_raclh"]
+
+[node name="Sponge" type="Node3D"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+script = ExtResource("1_koycv")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("BoxShape3D_3uocc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+mesh = SubResource("BoxMesh_raclh")
