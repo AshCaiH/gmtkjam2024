@@ -23,7 +23,7 @@ func _input(event):
                 sponge = sponge.get_node("RigidBody3D")
                 if sponge is Sponge:
                     sponge.waterUp = true;
-                    # print(sponge.waterUp);
+                    print(sponge.satisfied, sponge.waterUp);
 
     if event is InputEventMouseMotion:
     # if event.is_pressed():

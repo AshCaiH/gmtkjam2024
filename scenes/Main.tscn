@@ -108,9 +108,9 @@ layers = 513
 mesh = SubResource("PlaneMesh_0pkqa")
 surface_material_override/0 = SubResource("StandardMaterial3D_e71b8")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Floor"]
+[node name="FloorDetection" type="StaticBody3D" parent="Floor"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/FloorDetection"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0434305, 0)
 shape = SubResource("BoxShape3D_fwfob")
 

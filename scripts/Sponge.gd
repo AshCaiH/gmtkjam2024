@@ -28,8 +28,9 @@ func _ready():
 
 func _physics_process(delta: float) -> void:
     if !satisfied and waterUp:
+        print(waterUp);
         oldscale = scale;
-        growSpeed -= 0.1 * delta;
+        # growSpeed -= 0.1 * delta;
 
         if scaleX and scaleZ:
             scale += Vector3(growSpeed / 2, 0, growSpeed / 2) * delta;
@@ -51,6 +52,7 @@ func _physics_process(delta: float) -> void:
         print(get_contact_count());
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
+    if body.name == "FloorDetection": return;
     if !satisfied:
         if self == body: return;
         scale = oldscale;
