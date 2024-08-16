@@ -14,6 +14,15 @@ config/name="GMTKJam2024"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+MaxLvlNo="*res://max_lvl_no.gd"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
