@@ -23,6 +23,12 @@ grow_vertical = 2
 size_flags_horizontal = 3
 script = ExtResource("1_q8sgs")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+
 [node name="Level Selector" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
@@ -59,14 +65,8 @@ texture_pressed = ExtResource("7_6r17e")
 texture_hover = ExtResource("8_mopig")
 texture_disabled = ExtResource("9_7ve38")
 
-[node name="Button" type="Button" parent="Level Selector"]
+[node name="Playgamebutton" type="Button" parent="Level Selector"]
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 32
 text = "Play!"
-
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0

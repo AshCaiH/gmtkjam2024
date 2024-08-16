@@ -1,6 +1,6 @@
 extends Node
 
-var MaxLvlNo := 1
+var MaxLvlNo := 16
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
