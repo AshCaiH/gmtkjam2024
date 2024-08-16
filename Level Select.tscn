@@ -1,0 +1,72 @@
+[gd_scene load_steps=10 format=3 uid="uid://cmwxrtl4jlmwa"]
+
+[ext_resource type="Script" path="res://Level Select Widget.gd" id="1_q8sgs"]
+[ext_resource type="Texture2D" uid="uid://c74fb33nhx1r5" path="res://Assets/uplvlbuttonneutral.svg" id="2_uafw5"]
+[ext_resource type="Texture2D" uid="uid://075mocbiwur2" path="res://Assets/uplvlbuttonclicked.svg" id="3_voj7g"]
+[ext_resource type="Texture2D" uid="uid://bjh88o0ei1tq3" path="res://Assets/uplvlbuttonfocus.svg" id="4_ilyew"]
+[ext_resource type="Texture2D" uid="uid://b5npwgktapahl" path="res://Assets/uplvlbuttondisabled.svg" id="5_ai8bx"]
+[ext_resource type="Texture2D" uid="uid://pmnunl752u7p" path="res://Assets/dwnlvlbuttonneutal.svg" id="6_cvq7u"]
+[ext_resource type="Texture2D" uid="uid://dt2l8g6aw8cq2" path="res://Assets/dwnlvlbuttonclicked.svg" id="7_6r17e"]
+[ext_resource type="Texture2D" uid="uid://crkhtrl5abaqo" path="res://Assets/dwnlvlbuttonfocused.svg" id="8_mopig"]
+[ext_resource type="Texture2D" uid="uid://crgmielovqwm8" path="res://Assets/dwnlvlbuttondisabled.svg" id="9_7ve38"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_right = -1030.0
+offset_bottom = -319.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+script = ExtResource("1_q8sgs")
+
+[node name="Level Selector" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.85
+offset_bottom = 60.0
+
+[node name="UpLvlSelect" type="TextureButton" parent="Level Selector"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+texture_normal = ExtResource("2_uafw5")
+texture_pressed = ExtResource("3_voj7g")
+texture_hover = ExtResource("4_ilyew")
+texture_disabled = ExtResource("5_ai8bx")
+
+[node name="Label No" type="Label" parent="Level Selector"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 64
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DwnLvlSelect" type="TextureButton" parent="Level Selector"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+texture_normal = ExtResource("6_cvq7u")
+texture_pressed = ExtResource("7_6r17e")
+texture_hover = ExtResource("8_mopig")
+texture_disabled = ExtResource("9_7ve38")
+
+[node name="Button" type="Button" parent="Level Selector"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 32
+text = "Play!"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
