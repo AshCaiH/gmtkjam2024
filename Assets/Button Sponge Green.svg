@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   id="svg5"
+   version="1.1"
+   viewBox="0 0 52.916665 31.750001"
+   height="120"
+   width="200"
+   sodipodi:docname="Button Sponge Green.svg"
+   inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="true"
+     units="px"
+     width="120px"
+     inkscape:zoom="2.8436027"
+     inkscape:cx="114.29163"
+     inkscape:cy="83.872477"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g4019">
+    <inkscape:grid
+       type="xygrid"
+       id="grid846" />
+  </sodipodi:namedview>
+  <defs
+     id="defs2">
+    <linearGradient
+       id="linearGradient3719"
+       inkscape:swatch="solid">
+      <stop
+         style="stop-color:#828812;stop-opacity:1;"
+         offset="0"
+         id="stop3717" />
+    </linearGradient>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="rect848"
+       style="fill:#ffff00;fill-opacity:1;stroke:#828812;stroke-width:5.66929141;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 9.3847656,0 A 11.340979,11.340979 0 0 1 0,7.59375 V 45.259766 A 12.499999,12.499999 0 0 1 2.5,45 12.499999,12.499999 0 0 1 15,57.5 12.499999,12.499999 0 0 1 2.5,70 12.499999,12.499999 0 0 1 0,69.740234 V 101.99023 A 14.023508,14.023508 0 0 1 0.9765625,101.95312 14.023508,14.023508 0 0 1 15,115.97656 14.023508,14.023508 0 0 1 14.40625,120 h 86.46289 A 15,15 0 0 1 100,115 a 15,15 0 0 1 15,-15 15,15 0 0 1 15,15 15,15 0 0 1 -0.86914,5 h 51.05273 A 17.500001,17.500001 0 0 1 197.5,105 17.500001,17.500001 0 0 1 200,105.18164 V 87.892578 A 24.999999,24.999999 0 0 1 185,65 24.999999,24.999999 0 0 1 200,42.107422 V 14.603516 A 12.499999,12.499999 0 0 1 190,2.5 12.499999,12.499999 0 0 1 190.39648,0 H 142.4375 A 12.499999,12.499999 0 0 1 132.5,5 12.499999,12.499999 0 0 1 122.5625,0 H 49.748047 A 12.499999,12.499999 0 0 1 50,2.5 12.499999,12.499999 0 0 1 37.5,15 12.499999,12.499999 0 0 1 25,2.5 12.499999,12.499999 0 0 1 25.259766,0 Z M 137.5,30 A 12.499999,12.499999 0 0 1 150,42.5 12.499999,12.499999 0 0 1 137.5,55 12.499999,12.499999 0 0 1 125,42.5 12.499999,12.499999 0 0 1 137.5,30 Z M 55,60 A 15,15 0 0 1 70,75 15,15 0 0 1 55,90 15,15 0 0 1 40,75 15,15 0 0 1 55,60 Z"
+       transform="scale(0.26458333)" />
+  </g>
+  <g
+     inkscape:label="Layer 1 copy"
+     inkscape:groupmode="layer"
+     id="g4019">
+    <path
+       id="path4017"
+       style="fill:#1aec00;fill-opacity:1;stroke:#00b11c;stroke-width:5.66929141;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 9.3847656,0 A 11.340979,11.340979 0 0 1 0,7.59375 V 45.259766 A 12.499999,12.499999 0 0 1 2.5,45 12.499999,12.499999 0 0 1 15,57.5 12.499999,12.499999 0 0 1 2.5,70 12.499999,12.499999 0 0 1 0,69.740234 V 101.99023 A 14.023508,14.023508 0 0 1 0.9765625,101.95312 14.023508,14.023508 0 0 1 15,115.97656 14.023508,14.023508 0 0 1 14.40625,120 h 86.46289 A 15,15 0 0 1 100,115 a 15,15 0 0 1 15,-15 15,15 0 0 1 15,15 15,15 0 0 1 -0.86914,5 h 51.05273 A 17.500001,17.500001 0 0 1 197.5,105 17.500001,17.500001 0 0 1 200,105.18164 V 87.892578 A 24.999999,24.999999 0 0 1 185,65 24.999999,24.999999 0 0 1 200,42.107422 V 14.603516 A 12.499999,12.499999 0 0 1 190,2.5 12.499999,12.499999 0 0 1 190.39648,0 H 142.4375 A 12.499999,12.499999 0 0 1 132.5,5 12.499999,12.499999 0 0 1 122.5625,0 H 49.748047 A 12.499999,12.499999 0 0 1 50,2.5 12.499999,12.499999 0 0 1 37.5,15 12.499999,12.499999 0 0 1 25,2.5 12.499999,12.499999 0 0 1 25.259766,0 Z M 137.5,30 A 12.499999,12.499999 0 0 1 150,42.5 12.499999,12.499999 0 0 1 137.5,55 12.499999,12.499999 0 0 1 125,42.5 12.499999,12.499999 0 0 1 137.5,30 Z M 55,60 A 15,15 0 0 1 70,75 15,15 0 0 1 55,90 15,15 0 0 1 40,75 15,15 0 0 1 55,60 Z"
+       transform="scale(0.26458333)" />
+  </g>
+</svg>

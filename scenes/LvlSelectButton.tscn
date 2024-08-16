@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://lnojvqf7vrn0"]
+
+[ext_resource type="Texture2D" uid="uid://c3ytu6w3upa55" path="res://Assets/Button Sponge.svg" id="1_ifhri"]
+[ext_resource type="Texture2D" uid="uid://g6xwoqo5yon7" path="res://Assets/Button Sponge Grey.svg" id="2_5mdph"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchor_right = 0.156
+anchor_bottom = 0.167
+offset_right = 0.319992
+offset_bottom = -0.240005
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -168.48
+offset_bottom = -100.2
+texture_normal = ExtResource("1_ifhri")
+texture_disabled = ExtResource("2_5mdph")
