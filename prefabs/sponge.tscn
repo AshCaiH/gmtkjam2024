@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cwnae2n7xm8yn"]
+[gd_scene load_steps=5 format=3 uid="uid://cwnae2n7xm8yn"]
 
 [ext_resource type="Script" path="res://scripts/Sponge.gd" id="1_koycv"]
 
@@ -6,11 +6,14 @@
 
 [sub_resource type="BoxMesh" id="BoxMesh_raclh"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_bkrud"]
+
 [node name="Sponge" type="Node3D"]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
 gravity_scale = 0.0
+sleeping = true
 can_sleep = false
 freeze = true
 script = ExtResource("1_koycv")
@@ -20,3 +23,10 @@ shape = SubResource("BoxShape3D_3uocc")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
 mesh = SubResource("BoxMesh_raclh")
+
+[node name="Area3D" type="Area3D" parent="RigidBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D/Area3D"]
+shape = SubResource("BoxShape3D_bkrud")
+
+[connection signal="body_entered" from="RigidBody3D/Area3D" to="RigidBody3D" method="_on_area_3d_body_entered"]
