@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://dge1jk81cr6ja"]
 
-[ext_resource type="Script" path="res://MusicSlider.gd" id="1_pxyyh"]
-[ext_resource type="Script" path="res://SFXSlider.gd" id="2_s21b0"]
-[ext_resource type="Texture2D" uid="uid://du75fgx3nvq5m" path="res://Assets/soundicon.svg" id="2_w0o4g"]
-[ext_resource type="Script" path="res://MasterSlider.gd" id="3_62ub2"]
+[ext_resource type="Script" path="res://scripts/MusicSlider.gd" id="1_pxyyh"]
+[ext_resource type="Script" path="res://scripts/SFXSlider.gd" id="2_s21b0"]
+[ext_resource type="Texture2D" uid="uid://du75fgx3nvq5m" path="res://assets/soundicon.svg" id="2_w0o4g"]
+[ext_resource type="Script" path="res://scripts/MasterSlider.gd" id="3_62ub2"]
 
 [sub_resource type="GDScript" id="GDScript_usv4y"]
 script/source = "extends Control
