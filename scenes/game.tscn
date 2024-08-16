@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://dbrsc04uan3vi"]
+
+[ext_resource type="Script" path="res://scripts/Main.gd" id="1_uf5cd"]
+[ext_resource type="PackedScene" uid="uid://cwnae2n7xm8yn" path="res://prefabs/sponge.tscn" id="2_yocik"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_0pkqa"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3n2l8"]
+albedo_color = Color(0.2484, 0.2484, 0.2484, 1)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vhsg0"]
+
+[sub_resource type="Sky" id="Sky_1yurm"]
+sky_material = SubResource("ProceduralSkyMaterial_vhsg0")
+
+[sub_resource type="Environment" id="Environment_15veq"]
+background_mode = 2
+sky = SubResource("Sky_1yurm")
+ambient_light_color = Color(0.629675, 0.629675, 0.629675, 1)
+
+[node name="Game" type="Node3D"]
+script = ExtResource("1_uf5cd")
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_0pkqa")
+surface_material_override/0 = SubResource("StandardMaterial3D_3n2l8")
+
+[node name="Sponges" type="Node3D" parent="."]
+
+[node name="Sponge" parent="Sponges" instance=ExtResource("2_yocik")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.54164, 0.137367, -0.450933)
+
+[node name="Sponge2" parent="Sponges" instance=ExtResource("2_yocik")]
+transform = Transform3D(-0.00781982, 0, 0.0996938, 0, 0.1, 0, -0.0996938, 0, -0.00781982, -0.482431, 0.137367, 0.583063)
+
+[node name="Sponge3" parent="Sponges" instance=ExtResource("2_yocik")]
+transform = Transform3D(-0.0999269, 0, 0.00382308, 0, 0.1, 0, -0.00382308, 0, -0.0999269, 0.342487, 0.137367, 0.235686)
+
+[node name="Sponge4" parent="Sponges" instance=ExtResource("2_yocik")]
+transform = Transform3D(-0.0521218, 0, -0.0853423, 0, 0.1, 0, 0.0853423, 0, -0.0521218, -0.617396, 0.137367, -0.487077)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.524698, 0.55735, -0.64347, 0, 0.755877, 0.654714, 0.851288, -0.343527, 0.396607, -1.63993, 1.66858, 1.01078)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.380882, 0.323927, 0, 0.647854, 0.761765, -0.5, 0.659707, -0.561058, 0, 1, 1)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_15veq")
