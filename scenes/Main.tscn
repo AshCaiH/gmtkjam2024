@@ -35,7 +35,9 @@ subdivide_depth = 10
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e71b8"]
 albedo_texture = ExtResource("4_fblpx")
+metallic = 0.72
 metallic_specular = 1.0
+roughness = 0.64
 roughness_texture = ExtResource("6_o7rfl")
 normal_enabled = true
 normal_texture = ExtResource("5_dykrr")
@@ -89,12 +91,16 @@ transform = Transform3D(-0.0521218, 0, -0.0853423, 0, 0.1, 0, 0.0853423, 0, -0.0
 transform = Transform3D(-0.0521218, 0, -0.0853423, 0, 0.1, 0, 0.0853423, 0, -0.0521218, 0.4817, 0.0867656, 0.704193)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-1, -8.18329e-08, 3.0759e-08, 0, 0.351842, 0.93606, -8.74227e-08, 0.93606, -0.351842, -0.0956689, 1.88414, -0.616183)
+transform = Transform3D(-1, 6.60788e-08, -5.72393e-08, 0, 0.654741, 0.755854, 8.74227e-08, 0.755854, -0.654741, -0.096, 2.111, -1.949)
 current = true
+fov = 39.7
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.140642, 0.754193, -0.641415, -1.61144e-08, 0.647855, 0.761764, 0.99006, 0.107136, -0.0911159, 0, 1, 1)
+transform = Transform3D(0.571029, -0.625355, 0.531843, -2.03059e-08, 0.647855, 0.761764, -0.82093, -0.43499, 0.369944, 0, 1, 1)
 shadow_enabled = true
+shadow_bias = 0.0
+shadow_normal_bias = 0.952
+shadow_blur = 6.238
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_15veq")
@@ -106,4 +112,5 @@ surface_material_override/0 = SubResource("StandardMaterial3D_e71b8")
 
 [node name="Cursor" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000236034, 0.246254, -0.00170171)
+cast_shadow = 0
 mesh = SubResource("BoxMesh_bloml")
