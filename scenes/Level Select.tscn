@@ -1,14 +1,14 @@
 [gd_scene load_steps=10 format=3 uid="uid://cmwxrtl4jlmwa"]
 
-[ext_resource type="Script" path="res://Level Select Widget.gd" id="1_q8sgs"]
-[ext_resource type="Texture2D" uid="uid://c74fb33nhx1r5" path="res://Assets/uplvlbuttonneutral.svg" id="2_uafw5"]
-[ext_resource type="Texture2D" uid="uid://075mocbiwur2" path="res://Assets/uplvlbuttonclicked.svg" id="3_voj7g"]
-[ext_resource type="Texture2D" uid="uid://bjh88o0ei1tq3" path="res://Assets/uplvlbuttonfocus.svg" id="4_ilyew"]
-[ext_resource type="Texture2D" uid="uid://b5npwgktapahl" path="res://Assets/uplvlbuttondisabled.svg" id="5_ai8bx"]
-[ext_resource type="Texture2D" uid="uid://pmnunl752u7p" path="res://Assets/dwnlvlbuttonneutal.svg" id="6_cvq7u"]
-[ext_resource type="Texture2D" uid="uid://dt2l8g6aw8cq2" path="res://Assets/dwnlvlbuttonclicked.svg" id="7_6r17e"]
-[ext_resource type="Texture2D" uid="uid://crkhtrl5abaqo" path="res://Assets/dwnlvlbuttonfocused.svg" id="8_mopig"]
-[ext_resource type="Texture2D" uid="uid://crgmielovqwm8" path="res://Assets/dwnlvlbuttondisabled.svg" id="9_7ve38"]
+[ext_resource type="Script" path="res://scripts/Level Select Widget.gd" id="1_q8sgs"]
+[ext_resource type="Texture2D" uid="uid://c74fb33nhx1r5" path="res://assets/uplvlbuttonneutral.svg" id="2_uafw5"]
+[ext_resource type="Texture2D" uid="uid://075mocbiwur2" path="res://assets/uplvlbuttonclicked.svg" id="3_voj7g"]
+[ext_resource type="Texture2D" uid="uid://bjh88o0ei1tq3" path="res://assets/uplvlbuttonfocus.svg" id="4_ilyew"]
+[ext_resource type="Texture2D" uid="uid://b5npwgktapahl" path="res://assets/uplvlbuttondisabled.svg" id="5_ai8bx"]
+[ext_resource type="Texture2D" uid="uid://pmnunl752u7p" path="res://assets/dwnlvlbuttonneutal.svg" id="6_cvq7u"]
+[ext_resource type="Texture2D" uid="uid://dt2l8g6aw8cq2" path="res://assets/dwnlvlbuttonclicked.svg" id="7_6r17e"]
+[ext_resource type="Texture2D" uid="uid://crkhtrl5abaqo" path="res://assets/dwnlvlbuttonfocused.svg" id="8_mopig"]
+[ext_resource type="Texture2D" uid="uid://crgmielovqwm8" path="res://assets/dwnlvlbuttondisabled.svg" id="9_7ve38"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
