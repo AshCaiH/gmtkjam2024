@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dbrsc04uan3vi"]
+[gd_scene load_steps=16 format=3 uid="uid://dbrsc04uan3vi"]
 
 [ext_resource type="Script" path="res://scripts/Main.gd" id="1_rg8f5"]
 [ext_resource type="PackedScene" uid="uid://cwnae2n7xm8yn" path="res://prefabs/sponge.tscn" id="2_6fk1l"]
@@ -41,48 +41,55 @@ normal_enabled = true
 normal_texture = ExtResource("5_dykrr")
 uv1_scale = Vector3(2, 2, 2)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_17rjf"]
+shading_mode = 0
+
+[sub_resource type="BoxMesh" id="BoxMesh_bloml"]
+material = SubResource("StandardMaterial3D_17rjf")
+size = Vector3(0.1, 0.545, 0.1)
+
 [node name="Game" type="Node3D"]
 script = ExtResource("1_rg8f5")
 
 [node name="Water" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.595939, 0, 0, 0, 1, 0, -0.012388, 0)
+transform = Transform3D(1, 0, 0, 0, 0.595939, 0, 0, 0, 1, 0, -0.16296, 0)
 mesh = SubResource("BoxMesh_sswqg")
 surface_material_override/0 = ExtResource("2_tsmr1")
 
 [node name="Sponges" type="Node3D" parent="."]
 
 [node name="Sponge" parent="Sponges" instance=ExtResource("2_6fk1l")]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.54164, 0.137367, -0.450933)
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.54164, 0.0867666, -0.450933)
 
 [node name="Sponge2" parent="Sponges" instance=ExtResource("2_6fk1l")]
-transform = Transform3D(-0.00781982, 0, 0.0996938, 0, 0.1, 0, -0.0996938, 0, -0.00781982, -0.482431, 0.137367, 0.583063)
+transform = Transform3D(-0.00781982, 0, 0.0996938, 0, 0.1, 0, -0.0996938, 0, -0.00781982, -0.482431, 0.0867666, 0.583063)
 
 [node name="Sponge3" parent="Sponges" instance=ExtResource("2_6fk1l")]
-transform = Transform3D(-0.0999269, 0, 0.00382308, 0, 0.1, 0, -0.00382308, 0, -0.0999269, 0.342487, 0.137367, 0.235686)
+transform = Transform3D(-0.0999269, 0, 0.00382308, 0, 0.1, 0, -0.00382308, 0, -0.0999269, 0.342487, 0.0867666, 0.235686)
 
 [node name="Sponge4" parent="Sponges" instance=ExtResource("2_6fk1l")]
-transform = Transform3D(-0.0521218, 0, -0.0853423, 0, 0.1, 0, 0.0853423, 0, -0.0521218, -0.617396, 0.137367, -0.487077)
+transform = Transform3D(-0.0521218, 0, -0.0853423, 0, 0.1, 0, 0.0853423, 0, -0.0521218, -0.617396, 0.0867666, -0.487077)
 
 [node name="Sponge5" parent="Sponges" instance=ExtResource("2_6fk1l")]
-transform = Transform3D(-0.0521218, 0, -0.0853423, 0, 0.1, 0, 0.0853423, 0, -0.0521218, 0.158428, 0.137367, -0.178129)
+transform = Transform3D(-0.0521218, 0, -0.0853423, 0, 0.1, 0, 0.0853423, 0, -0.0521218, 0.158428, 0.0867666, -0.178129)
 
 [node name="Sponge6" parent="Sponges" instance=ExtResource("2_6fk1l")]
-transform = Transform3D(-0.0521218, 0, -0.0853423, 0, 0.1, 0, 0.0853423, 0, -0.0521218, -0.400287, 0.137367, 0.123795)
+transform = Transform3D(-0.0521218, 0, -0.0853423, 0, 0.1, 0, 0.0853423, 0, -0.0521218, -0.400287, 0.0867666, 0.123795)
 
 [node name="Sponge7" parent="Sponges" instance=ExtResource("2_6fk1l")]
-transform = Transform3D(-0.0521218, 0, -0.0853423, 0, 0.1, 0, 0.0853423, 0, -0.0521218, 0.074659, 0.137367, 0.608193)
+transform = Transform3D(-0.0521218, 0, -0.0853423, 0, 0.1, 0, 0.0853423, 0, -0.0521218, 0.074659, 0.0867666, 0.608193)
 
 [node name="Sponge8" parent="Sponges" instance=ExtResource("2_6fk1l")]
-transform = Transform3D(-0.0521218, 0, -0.0853423, 0, 0.1, 0, 0.0853423, 0, -0.0521218, -0.0920543, 0.137366, -0.68125)
+transform = Transform3D(-0.0521218, 0, -0.0853423, 0, 0.1, 0, 0.0853423, 0, -0.0521218, -0.0920543, 0.0867656, -0.68125)
 
 [node name="Sponge9" parent="Sponges" instance=ExtResource("2_6fk1l")]
-transform = Transform3D(-0.0521218, 0, -0.0853423, 0, 0.1, 0, 0.0853423, 0, -0.0521218, -0.773263, 0.137366, 0.220769)
+transform = Transform3D(-0.0521218, 0, -0.0853423, 0, 0.1, 0, 0.0853423, 0, -0.0521218, -0.773263, 0.0867656, 0.220769)
 
 [node name="Sponge10" parent="Sponges" instance=ExtResource("2_6fk1l")]
-transform = Transform3D(-0.0521218, 0, -0.0853423, 0, 0.1, 0, 0.0853423, 0, -0.0521218, 0.4817, 0.137366, 0.704193)
+transform = Transform3D(-0.0521218, 0, -0.0853423, 0, 0.1, 0, 0.0853423, 0, -0.0521218, 0.4817, 0.0867656, 0.704193)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.524698, 0.55735, -0.64347, 0, 0.755877, 0.654714, 0.851288, -0.343527, 0.396607, -1.63993, 1.66858, 1.01078)
+transform = Transform3D(-1, -8.18329e-08, 3.0759e-08, 0, 0.351842, 0.93606, -8.74227e-08, 0.93606, -0.351842, -0.0956689, 1.88414, -0.616183)
 current = true
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -92,7 +99,11 @@ shadow_enabled = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_15veq")
 
-[node name="Water2" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.177439, 0)
+[node name="Floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0386156, 0)
 mesh = SubResource("PlaneMesh_0pkqa")
 surface_material_override/0 = SubResource("StandardMaterial3D_e71b8")
+
+[node name="Cursor" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000236034, 0.246254, -0.00170171)
+mesh = SubResource("BoxMesh_bloml")

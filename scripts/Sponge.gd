@@ -1,3 +1,4 @@
+class_name Sponge
 extends RigidBody3D
 
 var growSpeed = 10.0;
@@ -5,6 +6,7 @@ var satisfied = false;
 var oldscale = scale;
 var scaleX = true;
 var scaleZ = true;
+var waterUp := false;
 
 # var customMesh = load("res://assets/models/rabbit.glb")
 
@@ -25,7 +27,7 @@ func _ready():
     add_to_group("sponges");
 
 func _physics_process(delta: float) -> void:
-    if !satisfied:
+    if !satisfied and waterUp:
         oldscale = scale;
 
         if scaleX and scaleZ:
