@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://bm7klffnnwbel"]
+
+[ext_resource type="Shader" path="res://materials/water.gdshader" id="1_sycfy"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_sycfy")
+shader_parameter/COLOUR = Color(0.412821, 0.905973, 1, 1)

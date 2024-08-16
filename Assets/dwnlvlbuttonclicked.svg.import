@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dt2l8g6aw8cq2"
-path="res://.godot/imported/dwnlvlbuttonclicked.svg-011af3286cb651bfde1d7bb2348f5134.ctex"
+path="res://.godot/imported/dwnlvlbuttonclicked.svg-5ac20e5c01c904791e0262874dec1277.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/dwnlvlbuttonclicked.svg"
-dest_files=["res://.godot/imported/dwnlvlbuttonclicked.svg-011af3286cb651bfde1d7bb2348f5134.ctex"]
+source_file="res://assets/dwnlvlbuttonclicked.svg"
+dest_files=["res://.godot/imported/dwnlvlbuttonclicked.svg-5ac20e5c01c904791e0262874dec1277.ctex"]
 
 [params]
 

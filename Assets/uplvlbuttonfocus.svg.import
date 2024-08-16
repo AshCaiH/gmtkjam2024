@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bjh88o0ei1tq3"
-path="res://.godot/imported/uplvlbuttonfocus.svg-c9d20b02cd2c1d8a3f547ab9f9081722.ctex"
+path="res://.godot/imported/uplvlbuttonfocus.svg-8b686416b8ed7168da8cf40f442d9107.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/uplvlbuttonfocus.svg"
-dest_files=["res://.godot/imported/uplvlbuttonfocus.svg-c9d20b02cd2c1d8a3f547ab9f9081722.ctex"]
+source_file="res://assets/uplvlbuttonfocus.svg"
+dest_files=["res://.godot/imported/uplvlbuttonfocus.svg-8b686416b8ed7168da8cf40f442d9107.ctex"]
 
 [params]
 

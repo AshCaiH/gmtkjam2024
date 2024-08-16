@@ -1,29 +1,53 @@
-[gd_scene load_steps=8 format=3 uid="uid://dbrsc04uan3vi"]
+[gd_scene load_steps=14 format=3 uid="uid://dbrsc04uan3vi"]
 
 [ext_resource type="Script" path="res://scripts/Main.gd" id="1_rg8f5"]
 [ext_resource type="PackedScene" uid="uid://cwnae2n7xm8yn" path="res://prefabs/sponge.tscn" id="2_6fk1l"]
+[ext_resource type="Material" path="res://materials/water.tres" id="2_tsmr1"]
+[ext_resource type="Texture2D" uid="uid://djnvvftm5kllv" path="res://materials/en_suite_1k.hdr" id="4_7c8vk"]
+[ext_resource type="Texture2D" uid="uid://rkg8p3noii20" path="res://materials/marble_mosaic_tiles_diff_1k.jpg" id="4_fblpx"]
+[ext_resource type="Texture2D" uid="uid://dmpkgpm2de0gb" path="res://materials/marble_mosaic_tiles_nor_gl_1k.png" id="5_dykrr"]
+[ext_resource type="Texture2D" uid="uid://d1gk6ctjcvtfq" path="res://materials/marble_mosaic_tiles_rough_1k.png" id="6_o7rfl"]
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_0pkqa"]
+[sub_resource type="BoxMesh" id="BoxMesh_sswqg"]
+size = Vector3(2, 0.5, 2)
+subdivide_width = 10
+subdivide_height = 10
+subdivide_depth = 10
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3n2l8"]
-albedo_color = Color(0.2484, 0.2484, 0.2484, 1)
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vhsg0"]
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_6oywk"]
+panorama = ExtResource("4_7c8vk")
 
 [sub_resource type="Sky" id="Sky_1yurm"]
-sky_material = SubResource("ProceduralSkyMaterial_vhsg0")
+sky_material = SubResource("PanoramaSkyMaterial_6oywk")
 
 [sub_resource type="Environment" id="Environment_15veq"]
-background_mode = 2
+background_mode = 1
+background_color = Color(0.512537, 0.688164, 0.809818, 1)
 sky = SubResource("Sky_1yurm")
-ambient_light_color = Color(0.629675, 0.629675, 0.629675, 1)
+ambient_light_source = 3
+ambient_light_color = Color(1, 1, 1, 1)
+reflected_light_source = 2
+fog_enabled = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_0pkqa"]
+subdivide_width = 10
+subdivide_depth = 10
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e71b8"]
+albedo_texture = ExtResource("4_fblpx")
+metallic_specular = 1.0
+roughness_texture = ExtResource("6_o7rfl")
+normal_enabled = true
+normal_texture = ExtResource("5_dykrr")
+uv1_scale = Vector3(2, 2, 2)
 
 [node name="Game" type="Node3D"]
 script = ExtResource("1_rg8f5")
 
-[node name="Floor" type="MeshInstance3D" parent="."]
-mesh = SubResource("PlaneMesh_0pkqa")
-surface_material_override/0 = SubResource("StandardMaterial3D_3n2l8")
+[node name="Water" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.595939, 0, 0, 0, 1, 0, -0.012388, 0)
+mesh = SubResource("BoxMesh_sswqg")
+surface_material_override/0 = ExtResource("2_tsmr1")
 
 [node name="Sponges" type="Node3D" parent="."]
 
@@ -59,10 +83,16 @@ transform = Transform3D(-0.0521218, 0, -0.0853423, 0, 0.1, 0, 0.0853423, 0, -0.0
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.524698, 0.55735, -0.64347, 0, 0.755877, 0.654714, 0.851288, -0.343527, 0.396607, -1.63993, 1.66858, 1.01078)
+current = true
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866025, -0.380882, 0.323927, 0, 0.647854, 0.761765, -0.5, 0.659707, -0.561058, 0, 1, 1)
+transform = Transform3D(-0.140642, 0.754193, -0.641415, -1.61144e-08, 0.647855, 0.761764, 0.99006, 0.107136, -0.0911159, 0, 1, 1)
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_15veq")
+
+[node name="Water2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.177439, 0)
+mesh = SubResource("PlaneMesh_0pkqa")
+surface_material_override/0 = SubResource("StandardMaterial3D_e71b8")
