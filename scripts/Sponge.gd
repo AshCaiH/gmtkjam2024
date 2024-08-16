@@ -29,6 +29,7 @@ func _ready():
 func _physics_process(delta: float) -> void:
     if !satisfied and waterUp:
         oldscale = scale;
+        growSpeed -= 0.1 * delta;
 
         if scaleX and scaleZ:
             scale += Vector3(growSpeed / 2, 0, growSpeed / 2) * delta;

@@ -2,11 +2,12 @@
 
 [ext_resource type="Script" path="res://scripts/Main.gd" id="1_rg8f5"]
 [ext_resource type="PackedScene" uid="uid://cwnae2n7xm8yn" path="res://prefabs/sponge.tscn" id="2_6fk1l"]
-[ext_resource type="Material" path="res://materials/water.tres" id="2_tsmr1"]
+[ext_resource type="Material" uid="uid://bi5ho73s72iha" path="res://materials/water.tres" id="2_tsmr1"]
 [ext_resource type="Texture2D" uid="uid://djnvvftm5kllv" path="res://materials/en_suite_1k.hdr" id="4_7c8vk"]
 [ext_resource type="Texture2D" uid="uid://rkg8p3noii20" path="res://materials/marble_mosaic_tiles_diff_1k.jpg" id="4_fblpx"]
 [ext_resource type="Texture2D" uid="uid://dmpkgpm2de0gb" path="res://materials/marble_mosaic_tiles_nor_gl_1k.png" id="5_dykrr"]
 [ext_resource type="Texture2D" uid="uid://d1gk6ctjcvtfq" path="res://materials/marble_mosaic_tiles_rough_1k.png" id="6_o7rfl"]
+[ext_resource type="PackedScene" uid="uid://bbv0spkb8ld7s" path="res://assets/models/light_shaft.tscn" id="8_8844k"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_sswqg"]
 size = Vector3(2, 0.5, 2)
@@ -22,7 +23,7 @@ sky_material = SubResource("PanoramaSkyMaterial_6oywk")
 
 [sub_resource type="Environment" id="Environment_15veq"]
 background_mode = 1
-background_color = Color(0.512537, 0.688164, 0.809818, 1)
+background_color = Color(0.126956, 0.220906, 0.283745, 1)
 sky = SubResource("Sky_1yurm")
 ambient_light_source = 3
 ambient_light_color = Color(1, 1, 1, 1)
@@ -43,12 +44,8 @@ normal_enabled = true
 normal_texture = ExtResource("5_dykrr")
 uv1_scale = Vector3(2, 2, 2)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_17rjf"]
-shading_mode = 0
-
-[sub_resource type="BoxMesh" id="BoxMesh_bloml"]
-material = SubResource("StandardMaterial3D_17rjf")
-size = Vector3(0.1, 0.545, 0.1)
+[sub_resource type="BoxShape3D" id="BoxShape3D_fwfob"]
+size = Vector3(2, 0.1, 2)
 
 [node name="Game" type="Node3D"]
 script = ExtResource("1_rg8f5")
@@ -91,12 +88,12 @@ transform = Transform3D(-0.0521218, 0, -0.0853423, 0, 0.1, 0, 0.0853423, 0, -0.0
 transform = Transform3D(-0.0521218, 0, -0.0853423, 0, 0.1, 0, 0.0853423, 0, -0.0521218, 0.4817, 0.0867656, 0.704193)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-1, 6.60788e-08, -5.72393e-08, 0, 0.654741, 0.755854, 8.74227e-08, 0.755854, -0.654741, -0.096, 2.111, -1.949)
+transform = Transform3D(-1, 6.60788e-08, -5.72393e-08, 0, 0.654741, 0.755853, 8.74228e-08, 0.755853, -0.654741, -0.096, 2.111, -1.949)
 current = true
 fov = 39.7
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.571029, -0.625355, 0.531843, -2.03059e-08, 0.647855, 0.761764, -0.82093, -0.43499, 0.369944, 0, 1, 1)
+transform = Transform3D(0.571029, -0.625355, 0.531843, 0.439537, 0.780071, 0.445305, -0.693349, -0.0205172, 0.72031, 0, 1, 1)
 shadow_enabled = true
 shadow_bias = 0.0
 shadow_normal_bias = 0.952
@@ -107,10 +104,14 @@ environment = SubResource("Environment_15veq")
 
 [node name="Floor" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0386156, 0)
+layers = 513
 mesh = SubResource("PlaneMesh_0pkqa")
 surface_material_override/0 = SubResource("StandardMaterial3D_e71b8")
 
-[node name="Cursor" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000236034, 0.246254, -0.00170171)
-cast_shadow = 0
-mesh = SubResource("BoxMesh_bloml")
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0434305, 0)
+shape = SubResource("BoxShape3D_fwfob")
+
+[node name="Cursor" parent="." instance=ExtResource("8_8844k")]
