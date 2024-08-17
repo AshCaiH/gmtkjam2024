@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://dge1jk81cr6ja"]
+[gd_scene load_steps=9 format=3 uid="uid://dge1jk81cr6ja"]
 
-[ext_resource type="Script" path="res://MusicSlider.gd" id="1_pxyyh"]
-[ext_resource type="Script" path="res://SFXSlider.gd" id="2_s21b0"]
+[ext_resource type="FontFile" uid="uid://benbjc1o0dtdb" path="res://Assets/Fonts/SuperSalad-qZgvV.ttf" id="1_453va"]
+[ext_resource type="Script" path="res://scripts/MusicSlider.gd" id="1_pxyyh"]
+[ext_resource type="Script" path="res://scripts/SFXSlider.gd" id="2_s21b0"]
 [ext_resource type="Texture2D" uid="uid://du75fgx3nvq5m" path="res://Assets/soundicon.svg" id="2_w0o4g"]
-[ext_resource type="Script" path="res://MasterSlider.gd" id="3_62ub2"]
+[ext_resource type="Script" path="res://scripts/MasterSlider.gd" id="3_62ub2"]
 [ext_resource type="Texture2D" uid="uid://c2nwa71jxqnwv" path="res://Assets/soundiconmuted.svg" id="3_pam6r"]
+[ext_resource type="FontFile" uid="uid://cv0o3tu5tlmnu" path="res://super-salad-font/SuperSalad-qZgvV.ttf" id="5_n35l3"]
 
 [sub_resource type="GDScript" id="GDScript_usv4y"]
 script/source = "extends Control
@@ -17,8 +19,7 @@ var soundicon = preload(\"res://Assets/soundicon.svg\")
 var soundiconmuted = preload(\"res://Assets/soundiconmuted.svg\")
 
 # This code sample assumes the current script is extending MarginContainer.
-var margin_value = 5
-
+var margin_value = 20
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -60,6 +61,8 @@ size_flags_vertical = 3
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer3"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_453va")
 text = "Master"
 vertical_alignment = 1
 
@@ -84,6 +87,8 @@ size_flags_vertical = 3
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_n35l3")
 text = "Music  "
 vertical_alignment = 1
 
@@ -108,6 +113,8 @@ size_flags_vertical = 3
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_n35l3")
 text = "SFX      "
 vertical_alignment = 1
 
