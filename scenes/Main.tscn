@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dbrsc04uan3vi"]
+[gd_scene load_steps=20 format=3 uid="uid://dbrsc04uan3vi"]
 
 [ext_resource type="Script" path="res://scripts/Main.gd" id="1_rg8f5"]
 [ext_resource type="PackedScene" uid="uid://d118bv6ro5bi8" path="res://prefabs/Rabbit.tscn" id="2_6fk1l"]
@@ -51,6 +51,9 @@ size = Vector3(2, 0.1, 2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ka0r6"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_kc2r3"]
+size = Vector3(2.36353, 1, 0.155579)
+
 [node name="Game" type="Node3D"]
 script = ExtResource("1_rg8f5")
 
@@ -93,11 +96,13 @@ shadow_blur = 6.238
 
 [node name="Floor" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0386156, 0)
-layers = 513
+layers = 512
 mesh = SubResource("PlaneMesh_0pkqa")
 surface_material_override/0 = SubResource("StandardMaterial3D_e71b8")
 
 [node name="FloorDetection" type="StaticBody3D" parent="Floor"]
+collision_layer = 513
+collision_mask = 513
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/FloorDetection"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0434305, 0)
@@ -120,6 +125,44 @@ visible = false
 [node name="RabbitPrime" parent="." instance=ExtResource("2_6fk1l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.01136, 0.0410178, 0.159195)
 visible = false
+
+[node name="Perimeter" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0802569, -1.13564)
+
+[node name="Perimeter" type="RigidBody3D" parent="Perimeter"]
+can_sleep = false
+freeze = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Perimeter/Perimeter"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.012085, 0, 0.0556335)
+shape = SubResource("BoxShape3D_kc2r3")
+
+[node name="Perimeter2" type="RigidBody3D" parent="Perimeter"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.15287)
+can_sleep = false
+freeze = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Perimeter/Perimeter2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.012085, 0, 0.0556335)
+shape = SubResource("BoxShape3D_kc2r3")
+
+[node name="Perimeter3" type="RigidBody3D" parent="Perimeter"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.13818, 0, 1.17671)
+can_sleep = false
+freeze = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Perimeter/Perimeter3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.012085, 0, 0.0556335)
+shape = SubResource("BoxShape3D_kc2r3")
+
+[node name="Perimeter4" type="RigidBody3D" parent="Perimeter"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.00046, 0, 1.14431)
+can_sleep = false
+freeze = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Perimeter/Perimeter4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.012085, 0, 0.0556335)
+shape = SubResource("BoxShape3D_kc2r3")
 
 [connection signal="body_entered" from="Cursor/Area3D" to="Cursor" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Cursor/Area3D" to="Cursor" method="_on_area_3d_body_exited"]

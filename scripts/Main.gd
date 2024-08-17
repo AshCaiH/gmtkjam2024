@@ -81,6 +81,7 @@ func _input(event):
         var ray_query = PhysicsRayQueryParameters3D.new()
         ray_query.from = from
         ray_query.to = to
+        ray_query.collision_mask = pow(2, 10-1);
         # ray_query.collide_with_areas = true
         # raycast_result = space.intersect_ray(ray_query)
         if len(space.intersect_ray(ray_query)) > 0:
