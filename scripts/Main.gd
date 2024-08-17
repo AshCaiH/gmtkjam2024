@@ -9,9 +9,12 @@ func _ready():
 
 func _process(delta):
     if waterRising:
-        if $Water.position.y < -0.065:
+        if $Water.position.y < 0.05:            
             $Water.position.y += 0.3 * delta;
 
+func _physics_process(delta: float) -> void:
+    Globals.time_elapsed += delta;
+    RenderingServer.global_shader_parameter_set("time_elapsed", Globals.time_elapsed + delta)
 
 func _input(event):
     if event is InputEventKey:
@@ -23,7 +26,6 @@ func _input(event):
                 sponge = sponge.get_node("RigidBody3D")
                 if sponge is Sponge:
                     sponge.waterUp = true;
-                    print(sponge.satisfied, sponge.waterUp);
 
     if event is InputEventMouseMotion:
     # if event.is_pressed():
