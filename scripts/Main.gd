@@ -11,6 +11,9 @@ var waterPosition = 0;
 
 func _ready():
     # sponges = $Sponges.get_children()
+
+    
+    getScore();
     pass;
 
 func _process(delta):
@@ -32,6 +35,30 @@ func turnOnTap():
         sponge = sponge.get_child(0);
         if sponge is Sponge:
             sponge.waterUp = true;
+
+func getScore():
+    var resolution = 100;
+    var score = 0.0;
+
+    for x in range(resolution):
+        for y in range(resolution):
+            var xPos = 1.0 / resolution * x - 1.0;
+            var yPos = 1.0 / resolution * y - 1.0;
+
+            var from = Vector3(xPos, 1, yPos);
+            var to = Vector3(xPos, -1, yPos);
+
+            var space = get_world_3d().direct_space_state
+            var ray_query = PhysicsRayQueryParameters3D.new();
+            ray_query.from = from;
+            ray_query.to = to;
+
+            var result = space.intersect_ray(ray_query);
+
+            if (len(result) > 0):
+                if result["collider"].name != "FloorDetection": score += 1;
+
+    print(score / (resolution * resolution) * 100);
 
 func _physics_process(delta: float) -> void:
     Globals.time_elapsed += delta;
@@ -64,7 +91,9 @@ func _input(event):
             $Cursor.visible = false;
 
     if event is InputEventMouseButton:
-        if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+        if Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT):
+            getScore();
+        elif Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
             var random = randi();
             if len($Cursor.touching) <= 1 and !waterRising:
                 var newSponge : Node3D;

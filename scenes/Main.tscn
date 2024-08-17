@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://scripts/Main.gd" id="1_rg8f5"]
 [ext_resource type="PackedScene" uid="uid://d118bv6ro5bi8" path="res://prefabs/Rabbit.tscn" id="2_6fk1l"]
 [ext_resource type="Material" uid="uid://bi5ho73s72iha" path="res://materials/water.tres" id="2_tsmr1"]
-[ext_resource type="Texture2D" uid="uid://djnvvftm5kllv" path="res://materials/en_suite_1k.hdr" id="4_7c8vk"]
-[ext_resource type="PackedScene" uid="uid://k4hohlm44g3f" path="res://prefabs/Sponge.tscn" id="4_38k4i"]
+[ext_resource type="Texture2D" uid="uid://dffy6ikn6yqxu" path="res://materials/en_suite_1k.hdr" id="4_7c8vk"]
+[ext_resource type="PackedScene" uid="uid://k4hohlm44g3f" path="res://prefabs/sponge.tscn" id="4_38k4i"]
 [ext_resource type="Texture2D" uid="uid://rkg8p3noii20" path="res://materials/marble_mosaic_tiles_diff_1k.jpg" id="4_fblpx"]
 [ext_resource type="Texture2D" uid="uid://dmpkgpm2de0gb" path="res://materials/marble_mosaic_tiles_nor_gl_1k.png" id="5_dykrr"]
 [ext_resource type="Texture2D" uid="uid://d1gk6ctjcvtfq" path="res://materials/marble_mosaic_tiles_rough_1k.png" id="6_o7rfl"]
@@ -71,7 +71,7 @@ transform = Transform3D(-0.8308, 0, 0.556571, 0, 1, 0, -0.556571, 0, -0.8308, -0
 transform = Transform3D(-0.8308, 0, 0.556571, 0, 1, 0, -0.556571, 0, -0.8308, 0.106858, 0.0410178, -0.298318)
 
 [node name="Rabbit4" parent="Sponges" instance=ExtResource("2_6fk1l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.374943, 0.0410178, 0.482617)
+transform = Transform3D(-0.796709, 0, -0.604363, 0, 1, 0, 0.604363, 0, -0.796709, 0.374943, 0.0410178, 0.482617)
 
 [node name="Sponge" parent="Sponges" instance=ExtResource("4_38k4i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.163197, 0.0451851, 0.377315)
