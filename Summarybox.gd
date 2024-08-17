@@ -23,7 +23,7 @@ func dialogue() -> void:
 	
 func progressbartween() -> void:
 	var tween := create_tween()
-	tween.tween_property(commenttimer, "value", filledvolume, 2.5)
+	tween.tween_property(commenttimer, "value", filledvolume, 2.5).set_trans(tween.TRANS_BOUNCE)
 	tween.finished.connect(commentandbutton)
 
 func commentandbutton() -> void:
