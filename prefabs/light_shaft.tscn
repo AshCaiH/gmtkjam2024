@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://crhh07r2okinn"]
+
+[ext_resource type="PackedScene" uid="uid://dmqhaaddweow8" path="res://assets/models/LightShaft.glb" id="1_ga6u6"]
+[ext_resource type="Material" uid="uid://cdu5nemmbuoqi" path="res://materials/light_shaft.tres" id="2_jk1e2"]
+
+[node name="LightShaft" instance=ExtResource("1_ga6u6")]
+
+[node name="Cube" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_jk1e2")

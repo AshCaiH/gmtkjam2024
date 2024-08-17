@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://d118bv6ro5bi8"]
+
+[ext_resource type="PackedScene" uid="uid://biupjgy4mtdss" path="res://assets/models/rabbit.glb" id="1_t38tl"]
+[ext_resource type="Material" uid="uid://ckmj3j3t0e08g" path="res://assets/models/Sponge.tres" id="2_mokfp"]
+
+[node name="rabbit" instance=ExtResource("1_t38tl")]
+
+[node name="Rabbit" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_mokfp")

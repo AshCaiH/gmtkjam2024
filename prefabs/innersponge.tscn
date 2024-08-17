@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cqpa2tkig6tl5"]
+
+[ext_resource type="PackedScene" uid="uid://b34ps251caps1" path="res://assets/models/sponge.glb" id="1_658g4"]
+
+[node name="sponge" instance=ExtResource("1_658g4")]

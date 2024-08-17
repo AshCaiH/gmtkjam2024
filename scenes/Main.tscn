@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dbrsc04uan3vi"]
+[gd_scene load_steps=19 format=3 uid="uid://dbrsc04uan3vi"]
 
 [ext_resource type="Script" path="res://scripts/Main.gd" id="1_rg8f5"]
 [ext_resource type="PackedScene" uid="uid://cwnae2n7xm8yn" path="res://prefabs/sponge.tscn" id="2_6fk1l"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://d1gk6ctjcvtfq" path="res://materials/marble_mosaic_tiles_rough_1k.png" id="6_o7rfl"]
 [ext_resource type="PackedScene" uid="uid://bbv0spkb8ld7s" path="res://assets/models/light_shaft.tscn" id="8_8844k"]
 [ext_resource type="Script" path="res://scripts/Cursor.gd" id="9_oteo0"]
+[ext_resource type="PackedScene" uid="uid://d118bv6ro5bi8" path="res://prefabs/Rabbit.tscn" id="10_attef"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_sswqg"]
 size = Vector3(2, 0.5, 2)
@@ -129,6 +130,9 @@ shape = SubResource("BoxShape3D_ka0r6")
 
 [node name="SpongePrime" parent="." instance=ExtResource("2_6fk1l")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 1.81364, 0.0849138, -0.577465)
+
+[node name="rabbit" parent="." instance=ExtResource("10_attef")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0945058, 0.0378806, -0.0702031)
 
 [connection signal="body_entered" from="Cursor/Area3D" to="Cursor" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Cursor/Area3D" to="Cursor" method="_on_area_3d_body_exited"]

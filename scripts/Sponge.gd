@@ -11,8 +11,8 @@ var baseYPos = position.y;
 
 # var customMesh = load("res://assets/models/rabbit.glb")
 
-@onready var mesh = $Sponge.get_node("Cube").mesh
-@onready var toy = $Toy;
+@onready var mesh = $Sponge.get_child(0).mesh
+# @onready var toy = $Toy;
 
 func _ready():
     add_to_group("sponges");
@@ -43,7 +43,7 @@ func _physics_process(delta: float) -> void:
                 or endpoints.z < -1 or endpoints.z > 1:
                 satisfied = true;
 
-        toy.scale = Vector3(1.0, 1.0, 1.0) / scale;
+        # toy.scale = Vector3(1.0, 1.0, 1.0) / scale;
         # mesh.material.uv1_scale = scale;
         # toy.position = Vector3(1 - scale.x, 0.5, 1 - scale.z);
 
