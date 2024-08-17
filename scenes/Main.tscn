@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dbrsc04uan3vi"]
+[gd_scene load_steps=25 format=3 uid="uid://dbrsc04uan3vi"]
 
 [ext_resource type="Script" path="res://scripts/Main.gd" id="1_rg8f5"]
 [ext_resource type="PackedScene" uid="uid://d118bv6ro5bi8" path="res://prefabs/Rabbit.tscn" id="2_6fk1l"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://d1gk6ctjcvtfq" path="res://materials/marble_mosaic_tiles_rough_1k.png" id="6_o7rfl"]
 [ext_resource type="PackedScene" uid="uid://bbv0spkb8ld7s" path="res://assets/models/light_shaft.tscn" id="8_8844k"]
 [ext_resource type="Script" path="res://scripts/Cursor.gd" id="9_oteo0"]
+[ext_resource type="PackedScene" uid="uid://cegoat2rxvx05" path="res://scenes/summarybox.tscn" id="11_8ugpv"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_sswqg"]
 size = Vector3(2, 0.5, 2)
@@ -264,6 +265,16 @@ shape = SubResource("BoxShape3D_kc2r3")
 transform = Transform3D(-1, -8.74228e-08, -3.82137e-15, 0, -4.37114e-08, 1, -8.74228e-08, 1, 4.37114e-08, 0, 5.093, 0)
 visible = false
 fov = 23.7
+
+[node name="Summarybox" parent="." instance=ExtResource("11_8ugpv")]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 865.0
+offset_top = 170.0
+offset_right = -115.0
+offset_bottom = -250.0
 
 [connection signal="body_entered" from="Cursor/Area3D" to="Cursor" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Cursor/Area3D" to="Cursor" method="_on_area_3d_body_exited"]

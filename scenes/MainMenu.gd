@@ -7,7 +7,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	mm_background_music.play()
+	# mm_background_music.play()
 	start_button.pressed.connect(startgame)
 	credits.pressed.connect(creditswindow)
 	startvisibility()

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://21v0d5gvrhvx"]
+
+[ext_resource type="AudioStream" uid="uid://bqdhhoshredgk" path="res://assets/Music/Super Friendly.mp3" id="1_g1cal"]
+
+[node name="MMBackgroundMusic" type="AudioStreamPlayer"]
+stream = ExtResource("1_g1cal")
+autoplay = true

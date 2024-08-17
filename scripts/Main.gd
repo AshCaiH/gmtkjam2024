@@ -33,9 +33,18 @@ func _process(delta):
                 cameraslidePlayed = true;
             waterRising = false;
             getScore();
+            var timer:SceneTreeTimer = get_tree().create_timer(1.0)
+            timer.timeout.connect(gameOver)  
 
     $Water.position.y = lerp(waterStartY, 0.05, Globals.waterLevel)
     $Cursor.position.y = lerp(cursorStartY, 3.0, Globals.waterLevel)
+
+func gameOver():
+    getScore();
+    print("score ", Globals.score);
+    var summary :Summarybox = $Summarybox;
+    summary.visible = true;
+    summary.progressbartween();
 
 func turnOnTap():
     sponges = $Sponges.get_children()
@@ -64,7 +73,9 @@ func getScore():
             if (len(result) > 0):
                 if result["collider"].name != "FloorDetection": score += 1;
 
-    print(score / (resolution * resolution) * 100);
+    score = score / (resolution * resolution) * 100;
+    print(score);
+    Globals.score = score;
 
 func _physics_process(delta: float) -> void:
     Globals.time_elapsed += delta;
@@ -76,9 +87,7 @@ func _input(event):
     if event is InputEventKey:
         if event.keycode == KEY_W: 
             turnOnTap();
-        if event.keycode == KEY_R and !Input.is_key_pressed(KEY_R): 
-            Globals.resetWater();
-            get_tree().reload_current_scene()
+        if event.keycode == KEY_R and !Input.is_key_pressed(KEY_R): Globals.resetWater();
 
     if Globals.waterLevel == 0 and !waterRising:
         if event is InputEventMouseMotion:
