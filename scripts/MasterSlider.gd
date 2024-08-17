@@ -9,10 +9,11 @@ var bus := AudioServer.get_bus_index("Master")
 func _ready() -> void:
 	value = db_to_linear(AudioServer.get_bus_volume_db(bus))
 	master_music_button.pressed.connect(mmds)
+	value_changed.connect(_on_value_changed)
 
 func _on_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(bus, linear_to_db(value))
-
+	
 func mmds() -> void:
 	if 	AudioServer.is_bus_mute(bus) == true:
 		master_music_button.texture_normal = soundicon

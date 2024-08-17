@@ -8,8 +8,8 @@ func _ready():
 	closecreditswindow()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
 func closecreditswindow() -> void:
-	credits_close_button.button_pressed.connect(func() -> void: credits_window.visible = false)
+	credits_close_button.pressed.connect(func() -> void: credits_window.visible = false)

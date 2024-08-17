@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bdprrncuiefpe"]
+[gd_scene load_steps=13 format=3 uid="uid://bdprrncuiefpe"]
 
 [ext_resource type="Script" path="res://scenes/MainMenu.gd" id="1_j7x3n"]
 [ext_resource type="Texture2D" uid="uid://bj13co87klm7r" path="res://Assets/white-square-tiled-texture-background.jpg" id="1_lphkx"]
@@ -9,6 +9,7 @@
 [ext_resource type="Theme" uid="uid://b1f53v5lbr3mn" path="res://Theme/buttontheme.tres" id="6_rpcfu"]
 [ext_resource type="Script" path="res://scripts/CreditsWindow.gd" id="7_fb8i4"]
 [ext_resource type="FontFile" uid="uid://benbjc1o0dtdb" path="res://Assets/Fonts/SuperSalad-qZgvV.ttf" id="8_4pc3m"]
+[ext_resource type="PackedScene" uid="uid://cmwxrtl4jlmwa" path="res://scenes/Level Select.tscn" id="10_r2kht"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gjbbe"]
 bg_color = Color(0.616266, 0.46821, 0.110345, 1)
@@ -50,6 +51,7 @@ texture = ExtResource("3_o7nx1")
 
 [node name="MMBackgroundMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_bn7n8")
+bus = &"Music"
 
 [node name="Control" parent="." instance=ExtResource("5_tp2dp")]
 custom_minimum_size = Vector2(300, 120)
@@ -60,15 +62,47 @@ offset_bottom = 174.0
 
 [node name="Start Button" type="Button" parent="."]
 unique_name_in_owner = true
-offset_left = 473.0
-offset_top = 555.0
-offset_right = 801.0
-offset_bottom = 643.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 440.0
+offset_top = 576.0
+offset_right = 840.0
+offset_bottom = 666.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
 theme = ExtResource("6_rpcfu")
 text = "Play!"
 
+[node name="Credits" type="Button" parent="."]
+unique_name_in_owner = true
+offset_left = 23.0
+offset_top = 625.0
+offset_right = 154.0
+offset_bottom = 682.0
+theme = ExtResource("6_rpcfu")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_gjbbe")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vmn5n")
+text = "Credits
+"
+
+[node name="Level Select" parent="." instance=ExtResource("10_r2kht")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 150)
+offset_left = 464.0
+offset_top = 432.0
+offset_right = 814.0
+offset_bottom = 634.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
 [node name="CreditsWindow" type="ColorRect" parent="."]
 unique_name_in_owner = true
+visible = false
 offset_left = 390.0
 offset_top = 24.0
 offset_right = 890.0
@@ -119,16 +153,3 @@ size_flags_horizontal = 4
 size_flags_vertical = 10
 theme = ExtResource("6_rpcfu")
 text = "Close"
-
-[node name="Credits" type="Button" parent="."]
-unique_name_in_owner = true
-offset_left = 23.0
-offset_top = 625.0
-offset_right = 154.0
-offset_bottom = 682.0
-theme = ExtResource("6_rpcfu")
-theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxFlat_gjbbe")
-theme_override_styles/hover = SubResource("StyleBoxFlat_vmn5n")
-text = "Credits
-"

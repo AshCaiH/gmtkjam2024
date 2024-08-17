@@ -7,6 +7,7 @@ var soundiconmuted = preload("res://Assets/soundiconmuted.svg")
 func _ready() -> void:
 	value = db_to_linear(AudioServer.get_bus_volume_db(bus))
 	music_music_button.pressed.connect(musicds)
+	value_changed.connect(_on_value_changed)
 
 func _on_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(bus, linear_to_db(value))
