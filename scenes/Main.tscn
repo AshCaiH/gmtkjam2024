@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://rkg8p3noii20" path="res://materials/marble_mosaic_tiles_diff_1k.jpg" id="4_fblpx"]
 [ext_resource type="Texture2D" uid="uid://dmpkgpm2de0gb" path="res://materials/marble_mosaic_tiles_nor_gl_1k.png" id="5_dykrr"]
 [ext_resource type="Texture2D" uid="uid://d1gk6ctjcvtfq" path="res://materials/marble_mosaic_tiles_rough_1k.png" id="6_o7rfl"]
-[ext_resource type="PackedScene" uid="uid://bbv0spkb8ld7s" path="res://assets/models/light_shaft.tscn" id="8_8844k"]
+[ext_resource type="PackedScene" uid="uid://bbv0spkb8ld7s" path="res://Assets/models/light_shaft.tscn" id="8_8844k"]
 [ext_resource type="Script" path="res://scripts/Cursor.gd" id="9_oteo0"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_sswqg"]

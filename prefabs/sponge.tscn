@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://cwnae2n7xm8yn"]
 
 [ext_resource type="Script" path="res://scripts/Sponge.gd" id="1_koycv"]
-[ext_resource type="PackedScene" uid="uid://biupjgy4mtdss" path="res://assets/models/rabbit.glb" id="2_i78rf"]
-[ext_resource type="PackedScene" uid="uid://b34ps251caps1" path="res://assets/models/sponge.glb" id="3_nprsm"]
+[ext_resource type="PackedScene" uid="uid://biupjgy4mtdss" path="res://Assets/models/rabbit.glb" id="2_i78rf"]
+[ext_resource type="PackedScene" uid="uid://b34ps251caps1" path="res://Assets/models/sponge.glb" id="3_nprsm"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3uocc"]
 
