@@ -1,0 +1,84 @@
+[gd_scene load_steps=6 format=3 uid="uid://ds6bushqqjlrq"]
+
+[ext_resource type="Script" path="res://scenes/progressbar.gd" id="1_abr7t"]
+[ext_resource type="FontFile" uid="uid://benbjc1o0dtdb" path="res://Assets/Fonts/SuperSalad-qZgvV.ttf" id="1_ivc8h"]
+[ext_resource type="Texture2D" uid="uid://b7oob4lqtws1t" path="res://Assets/tickgreen.svg" id="2_lqhov"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3csba"]
+bg_color = Color(0.259294, 0.259294, 0.259294, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tia1i"]
+bg_color = Color(0, 0.266666, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[node name="progressbar" type="Control"]
+layout_mode = 3
+anchor_right = 0.524
+anchor_bottom = 0.133
+offset_right = 0.279907
+offset_bottom = 0.239998
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_abr7t")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_ivc8h")
+theme_override_font_sizes/font_size = 32
+text = "% Filled"
+horizontal_alignment = 1
+
+[node name="FilledProgressBar" type="ProgressBar" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("1_ivc8h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/background = SubResource("StyleBoxFlat_3csba")
+theme_override_styles/fill = SubResource("StyleBoxFlat_tia1i")
+value = 50.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="TargetLabel" type="Label" parent="VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_ivc8h")
+theme_override_font_sizes/font_size = 48
+text = "Target Goal: X%"
+vertical_alignment = 1
+
+[node name="Tick Rect" type="TextureRect" parent="VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_lqhov")
