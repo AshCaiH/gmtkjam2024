@@ -3,12 +3,13 @@ render_mode blend_mix;
 uniform vec3 COLOUR : source_color;
 uniform sampler2D BEHIND_TEXTURE : hint_screen_texture;
 uniform sampler2D DEPTH_TEXTURE : hint_depth_texture, repeat_disable, filter_nearest;
+global uniform float time_elapsed;
 
 void vertex() {
 	// Called for every vertex the material is visible on.
 	VERTEX = VERTEX + vec3(
 		0.0, 
-		sin(TIME*1.0 - (MODELVIEW_MATRIX * vec4(VERTEX, 1)).x * 5.0) * 0.02 + sin(TIME*2.5 - (MODELVIEW_MATRIX * vec4(VERTEX, 1)).z * 5.0) * 0.02, 
+		sin(time_elapsed*1.0 - (MODELVIEW_MATRIX * vec4(VERTEX, 1)).x * 5.0) * 0.02 + sin(time_elapsed*2.5 - (MODELVIEW_MATRIX * vec4(VERTEX, 1)).z * 5.0) * 0.02, 
 		0.0
 	);
 }

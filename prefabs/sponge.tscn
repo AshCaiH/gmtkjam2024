@@ -13,29 +13,30 @@
 [node name="Sponge" type="Node3D"]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 
-[node name="RigidBody3D" type="RigidBody3D" parent="."]
+[node name="Sponge" type="RigidBody3D" parent="."]
 gravity_scale = 0.0
 sleeping = true
 can_sleep = false
 freeze = true
 script = ExtResource("1_koycv")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sponge"]
+visible = false
 shape = SubResource("BoxShape3D_3uocc")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Sponge"]
 visible = false
 mesh = SubResource("BoxMesh_raclh")
 
-[node name="Area3D" type="Area3D" parent="RigidBody3D"]
+[node name="Area3D" type="Area3D" parent="Sponge"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sponge/Area3D"]
 shape = SubResource("BoxShape3D_bkrud")
 
-[node name="Toy" parent="RigidBody3D" instance=ExtResource("2_i78rf")]
+[node name="Toy" parent="Sponge" instance=ExtResource("2_i78rf")]
 transform = Transform3D(0.856284, 0, 0, 0, 2.6885, 0, 0, 0, 0.744504, -0.244909, 0.58206, 0.0272441)
 visible = false
 
-[node name="Sponge" parent="RigidBody3D" instance=ExtResource("3_nprsm")]
+[node name="Sponge" parent="Sponge" instance=ExtResource("3_nprsm")]
 
-[connection signal="body_entered" from="RigidBody3D/Area3D" to="RigidBody3D" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="Sponge/Area3D" to="Sponge" method="_on_area_3d_body_entered"]

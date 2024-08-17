@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 MaxLvlNo="*res://scripts/max_lvl_no.gd"
+Globals="*res://scripts/Globals.gd"
 
 [display]
 
@@ -28,3 +29,10 @@ window/size/viewport_height=720
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+
+[shader_globals]
+
+time_elapsed={
+"type": "float",
+"value": 0.0
+}

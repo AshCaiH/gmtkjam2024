@@ -18,5 +18,4 @@ roughness_texture_channel = 1
 normal_enabled = true
 normal_scale = 0.2
 normal_texture = ExtResource("3_atddl")
-rim_enabled = true
 uv1_scale = Vector3(2, 2, 2)

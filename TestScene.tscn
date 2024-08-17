@@ -1,0 +1,131 @@
+[gd_scene load_steps=18 format=3 uid="uid://covcdt0ih6gp3"]
+
+[ext_resource type="Script" path="res://scripts/Main.gd" id="1_lfp6o"]
+[ext_resource type="Texture2D" uid="uid://rkg8p3noii20" path="res://materials/marble_mosaic_tiles_diff_1k.jpg" id="1_xjlvh"]
+[ext_resource type="Texture2D" uid="uid://dmpkgpm2de0gb" path="res://materials/marble_mosaic_tiles_nor_gl_1k.png" id="2_ush62"]
+[ext_resource type="Texture2D" uid="uid://d1gk6ctjcvtfq" path="res://materials/marble_mosaic_tiles_rough_1k.png" id="3_yllo2"]
+[ext_resource type="Texture2D" uid="uid://djnvvftm5kllv" path="res://materials/en_suite_1k.hdr" id="4_dkhw8"]
+[ext_resource type="Material" uid="uid://bi5ho73s72iha" path="res://materials/water.tres" id="5_mbouo"]
+[ext_resource type="PackedScene" uid="uid://cwnae2n7xm8yn" path="res://prefabs/sponge.tscn" id="6_4jkem"]
+[ext_resource type="PackedScene" uid="uid://bbv0spkb8ld7s" path="res://assets/models/light_shaft.tscn" id="7_258ul"]
+[ext_resource type="Script" path="res://scripts/Cursor.gd" id="8_hcrio"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_dc4h8"]
+subdivide_width = 10
+subdivide_depth = 10
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k81n6"]
+albedo_texture = ExtResource("1_xjlvh")
+metallic = 0.72
+metallic_specular = 1.0
+roughness = 0.64
+roughness_texture = ExtResource("3_yllo2")
+normal_enabled = true
+normal_texture = ExtResource("2_ush62")
+uv1_scale = Vector3(2, 2, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jgtcd"]
+size = Vector3(2, 0.1, 2)
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_sw8fl"]
+panorama = ExtResource("4_dkhw8")
+
+[sub_resource type="Sky" id="Sky_oru63"]
+sky_material = SubResource("PanoramaSkyMaterial_sw8fl")
+
+[sub_resource type="Environment" id="Environment_bk4n4"]
+background_mode = 1
+background_color = Color(0.126956, 0.220906, 0.283745, 1)
+background_intensity = 1.0
+sky = SubResource("Sky_oru63")
+ambient_light_source = 3
+ambient_light_color = Color(1, 1, 1, 1)
+reflected_light_source = 2
+
+[sub_resource type="BoxMesh" id="BoxMesh_p0a2y"]
+size = Vector3(2, 0.5, 2)
+subdivide_width = 10
+subdivide_height = 10
+subdivide_depth = 10
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_87yhf"]
+
+[node name="TestScene" type="Node3D"]
+script = ExtResource("1_lfp6o")
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0386156, 0)
+layers = 513
+mesh = SubResource("PlaneMesh_dc4h8")
+surface_material_override/0 = SubResource("StandardMaterial3D_k81n6")
+
+[node name="FloorDetection" type="StaticBody3D" parent="Floor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/FloorDetection"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0434305, 0)
+shape = SubResource("BoxShape3D_jgtcd")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_bk4n4")
+
+[node name="Water" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.595939, 0, 0, 0, 1, 0, -0.16313, 0)
+mesh = SubResource("BoxMesh_p0a2y")
+surface_material_override/0 = ExtResource("5_mbouo")
+
+[node name="Sponges" type="Node3D" parent="."]
+
+[node name="Sponge" parent="Sponges" instance=ExtResource("6_4jkem")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.54164, 0.0867666, -0.450933)
+
+[node name="Sponge2" parent="Sponges" instance=ExtResource("6_4jkem")]
+transform = Transform3D(-0.00781982, 0, 0.0996938, 0, 0.1, 0, -0.0996938, 0, -0.00781982, -0.482431, 0.0867666, 0.583063)
+
+[node name="Sponge3" parent="Sponges" instance=ExtResource("6_4jkem")]
+transform = Transform3D(-0.0999269, 0, 0.00382308, 0, 0.1, 0, -0.00382308, 0, -0.0999269, 0.342487, 0.0867666, 0.235686)
+
+[node name="Sponge4" parent="Sponges" instance=ExtResource("6_4jkem")]
+transform = Transform3D(-0.0521218, 0, -0.0853423, 0, 0.1, 0, 0.0853423, 0, -0.0521218, -0.617396, 0.0867666, -0.487077)
+
+[node name="Sponge5" parent="Sponges" instance=ExtResource("6_4jkem")]
+transform = Transform3D(-0.0521218, 0, -0.0853423, 0, 0.1, 0, 0.0853423, 0, -0.0521218, 0.158428, 0.0867666, -0.178129)
+
+[node name="Sponge6" parent="Sponges" instance=ExtResource("6_4jkem")]
+transform = Transform3D(-0.0521218, 0, -0.0853423, 0, 0.1, 0, 0.0853423, 0, -0.0521218, -0.400287, 0.0867666, 0.123795)
+
+[node name="Sponge7" parent="Sponges" instance=ExtResource("6_4jkem")]
+transform = Transform3D(-0.0521218, 0, -0.0853423, 0, 0.1, 0, 0.0853423, 0, -0.0521218, 0.074659, 0.0867666, 0.608193)
+
+[node name="Sponge8" parent="Sponges" instance=ExtResource("6_4jkem")]
+transform = Transform3D(-0.0521218, 0, -0.0853423, 0, 0.1, 0, 0.0853423, 0, -0.0521218, -0.0920543, 0.0867656, -0.68125)
+
+[node name="Sponge9" parent="Sponges" instance=ExtResource("6_4jkem")]
+transform = Transform3D(-0.0521218, 0, -0.0853423, 0, 0.1, 0, 0.0853423, 0, -0.0521218, -0.773263, 0.0867656, 0.220769)
+
+[node name="Sponge10" parent="Sponges" instance=ExtResource("6_4jkem")]
+transform = Transform3D(-0.0521218, 0, -0.0853423, 0, 0.1, 0, 0.0853423, 0, -0.0521218, 0.4817, 0.0867656, 0.704193)
+
+[node name="Cursor" parent="." instance=ExtResource("7_258ul")]
+visible = false
+script = ExtResource("8_hcrio")
+
+[node name="Area3D" type="Area3D" parent="Cursor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cursor/Area3D"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.115321, 0)
+shape = SubResource("BoxShape3D_87yhf")
+
+[node name="SpongePrime" parent="." instance=ExtResource("6_4jkem")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 1.81364, 0.0849138, -0.577465)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.658162, 0.0364867, -0.751991, 0.725271, 0.237265, 0.646288, 0.202002, -0.970759, 0.129696, -0.30012, 0.695449, -0.613273)
+shadow_enabled = true
+
+[node name="Camera3D2" type="Camera3D" parent="."]
+transform = Transform3D(-1, 6.60788e-08, -5.72393e-08, 0, 0.654741, 0.755853, 8.74228e-08, 0.755853, -0.654741, -0.096, 2.111, -1.949)
+current = true
+fov = 39.7
+
+[connection signal="body_entered" from="Cursor/Area3D" to="Cursor" method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Cursor/Area3D" to="Cursor" method="_on_area_3d_body_exited"]
