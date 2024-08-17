@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://pmnunl752u7p"
-path="res://.godot/imported/dwnlvlbuttonneutal.svg-ac9bc60bedb64398df2597335def4966.ctex"
+path="res://.godot/imported/dwnlvlbuttonneutal.svg-fb3c4acc346c517c4b265dba4a289a27.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/dwnlvlbuttonneutal.svg"
-dest_files=["res://.godot/imported/dwnlvlbuttonneutal.svg-ac9bc60bedb64398df2597335def4966.ctex"]
+source_file="res://assets/dwnlvlbuttonneutal.svg"
+dest_files=["res://.godot/imported/dwnlvlbuttonneutal.svg-fb3c4acc346c517c4b265dba4a289a27.ctex"]
 
 [params]
 

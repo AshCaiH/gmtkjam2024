@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://075mocbiwur2"
-path="res://.godot/imported/uplvlbuttonclicked.svg-3512950bb5d29cd14893a785d704c974.ctex"
+path="res://.godot/imported/uplvlbuttonclicked.svg-f2bcabd353b11a5ab4a33092105d1160.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/uplvlbuttonclicked.svg"
-dest_files=["res://.godot/imported/uplvlbuttonclicked.svg-3512950bb5d29cd14893a785d704c974.ctex"]
+source_file="res://assets/uplvlbuttonclicked.svg"
+dest_files=["res://.godot/imported/uplvlbuttonclicked.svg-f2bcabd353b11a5ab4a33092105d1160.ctex"]
 
 [params]
 

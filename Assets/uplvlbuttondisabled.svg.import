@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b5npwgktapahl"
-path="res://.godot/imported/uplvlbuttondisabled.svg-63ff846a02c9626bf310446831e23bd7.ctex"
+path="res://.godot/imported/uplvlbuttondisabled.svg-1e2bd47be47f4df8a4db7d73eac396dd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/uplvlbuttondisabled.svg"
-dest_files=["res://.godot/imported/uplvlbuttondisabled.svg-63ff846a02c9626bf310446831e23bd7.ctex"]
+source_file="res://assets/uplvlbuttondisabled.svg"
+dest_files=["res://.godot/imported/uplvlbuttondisabled.svg-1e2bd47be47f4df8a4db7d73eac396dd.ctex"]
 
 [params]
 
