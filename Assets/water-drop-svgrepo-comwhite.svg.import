@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cedyrrxr5qmux"
-path="res://.godot/imported/water-drop-svgrepo-comwhite.svg-c410a76f0d0570807c659fd8e3f93db8.ctex"
+path="res://.godot/imported/water-drop-svgrepo-comwhite.svg-0c42000d0f2a3df0110346f59f45a1b2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/water-drop-svgrepo-comwhite.svg"
-dest_files=["res://.godot/imported/water-drop-svgrepo-comwhite.svg-c410a76f0d0570807c659fd8e3f93db8.ctex"]
+source_file="res://assets/water-drop-svgrepo-comwhite.svg"
+dest_files=["res://.godot/imported/water-drop-svgrepo-comwhite.svg-0c42000d0f2a3df0110346f59f45a1b2.ctex"]
 
 [params]
 

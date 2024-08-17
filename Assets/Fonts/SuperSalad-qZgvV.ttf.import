@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://benbjc1o0dtdb"
-path="res://.godot/imported/SuperSalad-qZgvV.ttf-1fe039421f087b2cd04fa57510f24f1b.fontdata"
+path="res://.godot/imported/SuperSalad-qZgvV.ttf-0991ee9a02ba258e6d03905b66aa57c3.fontdata"
 
 [deps]
 
-source_file="res://Assets/Fonts/SuperSalad-qZgvV.ttf"
-dest_files=["res://.godot/imported/SuperSalad-qZgvV.ttf-1fe039421f087b2cd04fa57510f24f1b.fontdata"]
+source_file="res://assets/Fonts/SuperSalad-qZgvV.ttf"
+dest_files=["res://.godot/imported/SuperSalad-qZgvV.ttf-0991ee9a02ba258e6d03905b66aa57c3.fontdata"]
 
 [params]
 

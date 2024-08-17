@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cuykv1mkeby16"
-path="res://.godot/imported/JAW_logo_1_transparent - Copy.png-4d8fc29ae869798d005c8cedc5cd6a4d.ctex"
+path="res://.godot/imported/JAW_logo_1_transparent - Copy.png-b0e71c1711e5eeb669ec1301d2b383e0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/JAW_logo_1_transparent - Copy.png"
-dest_files=["res://.godot/imported/JAW_logo_1_transparent - Copy.png-4d8fc29ae869798d005c8cedc5cd6a4d.ctex"]
+source_file="res://assets/JAW_logo_1_transparent - Copy.png"
+dest_files=["res://.godot/imported/JAW_logo_1_transparent - Copy.png-b0e71c1711e5eeb669ec1301d2b383e0.ctex"]
 
 [params]
 

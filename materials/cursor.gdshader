@@ -9,7 +9,7 @@ void vertex() {
 }
 
 void fragment() {	
-	ALPHA = smoothstep(pos.y, -0.5, -0.3);
+	ALPHA = smoothstep(pos.y, -1.0, -0.3);
     if (pos.y <= -0.5) {
         ALPHA = 0.0;
     }

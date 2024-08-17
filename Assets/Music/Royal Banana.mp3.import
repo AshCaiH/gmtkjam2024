@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://cbchfcgh6iw6w"
-path="res://.godot/imported/Royal Banana.mp3-2e05101aa15205422c80b13ebdad4b70.mp3str"
+path="res://.godot/imported/Royal Banana.mp3-590feb7fdbde978dd73a16918aef5179.mp3str"
 
 [deps]
 
-source_file="res://Assets/Music/Royal Banana.mp3"
-dest_files=["res://.godot/imported/Royal Banana.mp3-2e05101aa15205422c80b13ebdad4b70.mp3str"]
+source_file="res://assets/Music/Royal Banana.mp3"
+dest_files=["res://.godot/imported/Royal Banana.mp3-590feb7fdbde978dd73a16918aef5179.mp3str"]
 
 [params]
 

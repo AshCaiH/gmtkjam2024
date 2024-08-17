@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bj13co87klm7r"
-path="res://.godot/imported/white-square-tiled-texture-background.jpg-e6c5dd6a0e0bb0c02fad04fe01b4b970.ctex"
+path="res://.godot/imported/white-square-tiled-texture-background.jpg-6a3b36e3734a23441051dfc334cffe33.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/white-square-tiled-texture-background.jpg"
-dest_files=["res://.godot/imported/white-square-tiled-texture-background.jpg-e6c5dd6a0e0bb0c02fad04fe01b4b970.ctex"]
+source_file="res://assets/white-square-tiled-texture-background.jpg"
+dest_files=["res://.godot/imported/white-square-tiled-texture-background.jpg-6a3b36e3734a23441051dfc334cffe33.ctex"]
 
 [params]
 

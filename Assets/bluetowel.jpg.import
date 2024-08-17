@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dmbr3fa3pd7ae"
-path="res://.godot/imported/bluetowel.jpg-2ea8fc027c5ec0738a5dffe77cff61b0.ctex"
+path="res://.godot/imported/bluetowel.jpg-3e404d1e72343b29a583b4f966e4d102.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/bluetowel.jpg"
-dest_files=["res://.godot/imported/bluetowel.jpg-2ea8fc027c5ec0738a5dffe77cff61b0.ctex"]
+source_file="res://assets/bluetowel.jpg"
+dest_files=["res://.godot/imported/bluetowel.jpg-3e404d1e72343b29a583b4f966e4d102.ctex"]
 
 [params]
 

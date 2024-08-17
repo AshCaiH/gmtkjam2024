@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bqxvtdc71tv6e"
-path="res://.godot/imported/JAW Itch Logo.png-fa7e109b178323ed4faf7d3da5d9a966.ctex"
+path="res://.godot/imported/JAW Itch Logo.png-f3e540783fd2cf140ce7c82442c467f1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/JAW Itch Logo.png"
-dest_files=["res://.godot/imported/JAW Itch Logo.png-fa7e109b178323ed4faf7d3da5d9a966.ctex"]
+source_file="res://assets/JAW Itch Logo.png"
+dest_files=["res://.godot/imported/JAW Itch Logo.png-f3e540783fd2cf140ce7c82442c467f1.ctex"]
 
 [params]
 

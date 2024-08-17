@@ -160,7 +160,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0945058, 0.0967297, -0.070
 transform = Transform3D(-0.8308, 0, 0.556571, 0, 1, 0, -0.556571, 0, -0.8308, -0.62053, 0.0967297, -0.483573)
 
 [node name="Rabbit3" parent="Sponges" instance=ExtResource("2_6fk1l")]
-transform = Transform3D(-0.8308, 0, 0.556571, 0, 1, 0, -0.556571, 0, -0.8308, 0.106858, 0.0967297, -0.298318)
+transform = Transform3D(-0.8308, 0, 0.556571, 0, 1, 0, -0.556571, 0, -0.8308, 0.292637, 0.0967297, -0.46412)
 
 [node name="Rabbit4" parent="Sponges" instance=ExtResource("2_6fk1l")]
 transform = Transform3D(-0.796709, 0, -0.604363, 0, 1, 0, 0.604363, 0, -0.796709, 0.374943, 0.0967297, 0.482617)
@@ -204,7 +204,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0434305, 0)
 shape = SubResource("BoxShape3D_fwfob")
 
 [node name="Cursor" parent="." instance=ExtResource("8_8844k")]
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.33054, 0)
 script = ExtResource("9_oteo0")
 
 [node name="Area3D" type="Area3D" parent="Cursor"]

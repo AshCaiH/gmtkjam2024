@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b0ihqws7oaqhx"
-path="res://.godot/imported/Itch Background.jpg-4e1db8be94c32d357df1ed6647af84b5.ctex"
+path="res://.godot/imported/Itch Background.jpg-3d0404e66aab5351e476df978a7e9ca1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Itch Background.jpg"
-dest_files=["res://.godot/imported/Itch Background.jpg-4e1db8be94c32d357df1ed6647af84b5.ctex"]
+source_file="res://assets/Itch Background.jpg"
+dest_files=["res://.godot/imported/Itch Background.jpg-3d0404e66aab5351e476df978a7e9ca1.ctex"]
 
 [params]
 
