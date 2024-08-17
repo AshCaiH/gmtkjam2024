@@ -19,17 +19,17 @@ subdivide_depth = 10
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_6oywk"]
 panorama = ExtResource("4_7c8vk")
 
-[sub_resource type="Sky" id="Sky_1yurm"]
+[sub_resource type="Sky" id="Sky_dw7s3"]
 sky_material = SubResource("PanoramaSkyMaterial_6oywk")
 
 [sub_resource type="Environment" id="Environment_15veq"]
 background_mode = 1
 background_color = Color(0.126956, 0.220906, 0.283745, 1)
-sky = SubResource("Sky_1yurm")
+background_intensity = 1.0
+sky = SubResource("Sky_dw7s3")
 ambient_light_source = 3
 ambient_light_color = Color(1, 1, 1, 1)
 reflected_light_source = 2
-fog_enabled = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_0pkqa"]
 subdivide_width = 10
@@ -95,15 +95,15 @@ transform = Transform3D(-1, 6.60788e-08, -5.72393e-08, 0, 0.654741, 0.755853, 8.
 current = true
 fov = 39.7
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_15veq")
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.571029, -0.625355, 0.531843, 0.439537, 0.780071, 0.445305, -0.693349, -0.0205172, 0.72031, 0, 1, 1)
+transform = Transform3D(-0.425398, 0.61742, -0.661686, 0.439537, 0.78007, 0.445306, 0.791103, -0.101403, -0.60322, 1.21694, 1, 2.3307)
 shadow_enabled = true
 shadow_bias = 0.0
 shadow_normal_bias = 0.952
 shadow_blur = 6.238
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_15veq")
 
 [node name="Floor" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0386156, 0)
