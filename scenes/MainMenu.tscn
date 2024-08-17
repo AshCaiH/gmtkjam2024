@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bdprrncuiefpe"]
+[gd_scene load_steps=16 format=3 uid="uid://bdprrncuiefpe"]
 
 [ext_resource type="Script" path="res://scenes/MainMenu.gd" id="1_j7x3n"]
 [ext_resource type="Texture2D" uid="uid://bj13co87klm7r" path="res://Assets/white-square-tiled-texture-background.jpg" id="1_lphkx"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://scripts/CreditsWindow.gd" id="7_fb8i4"]
 [ext_resource type="FontFile" uid="uid://benbjc1o0dtdb" path="res://Assets/Fonts/SuperSalad-qZgvV.ttf" id="8_4pc3m"]
 [ext_resource type="PackedScene" uid="uid://cmwxrtl4jlmwa" path="res://scenes/Level Select.tscn" id="10_r2kht"]
+[ext_resource type="PackedScene" uid="uid://oumcdk8ddtyt" path="res://scenes/summarybox.tscn" id="11_i4r5i"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gjbbe"]
 bg_color = Color(0.616266, 0.46821, 0.110345, 1)
@@ -184,3 +185,9 @@ size_flags_horizontal = 4
 size_flags_vertical = 10
 theme = ExtResource("6_rpcfu")
 text = "Close"
+
+[node name="Summarybox" parent="." instance=ExtResource("11_i4r5i")]
+offset_left = 752.0
+offset_top = 264.0
+offset_right = 752.48
+offset_bottom = 268.08
