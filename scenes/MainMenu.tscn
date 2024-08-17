@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bdprrncuiefpe"]
+[gd_scene load_steps=15 format=3 uid="uid://bdprrncuiefpe"]
 
 [ext_resource type="Script" path="res://scenes/MainMenu.gd" id="1_j7x3n"]
 [ext_resource type="Texture2D" uid="uid://bj13co87klm7r" path="res://Assets/white-square-tiled-texture-background.jpg" id="1_lphkx"]
@@ -24,11 +24,34 @@ corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vmn5n"]
 bg_color = Color(0.615686, 0.466667, 0.109804, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
 border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yck50"]
+bg_color = Color(0.397463, 0.297131, 0.057484, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qpdor"]
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
@@ -73,6 +96,8 @@ offset_right = 840.0
 offset_bottom = 666.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(200, 46)
+size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("6_rpcfu")
 text = "Play!"
@@ -87,16 +112,22 @@ theme = ExtResource("6_rpcfu")
 theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_gjbbe")
 theme_override_styles/hover = SubResource("StyleBoxFlat_vmn5n")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_yck50")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_qpdor")
+theme_override_styles/focus = SubResource("StyleBoxFlat_gjbbe")
 text = "Credits
 "
 
 [node name="Level Select" parent="." instance=ExtResource("10_r2kht")]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 150)
-offset_left = 464.0
-offset_top = 432.0
-offset_right = 814.0
-offset_bottom = 634.0
+anchors_preset = 0
+offset_left = -192.0
+offset_top = 288.0
+offset_right = 158.0
+offset_bottom = 490.0
+grow_horizontal = 1
+grow_vertical = 1
 size_flags_horizontal = 4
 size_flags_vertical = 4
 

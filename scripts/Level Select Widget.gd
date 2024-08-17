@@ -10,7 +10,8 @@ func _ready():
 	dwn_lvl_select.disabled = true
 	lvlupanddown()
 	playgamebutton.pressed.connect(startgame)
-	#self.position = get_viewport_rect().size/2
+	self.position = get_viewport_rect().size/2
+	self.position.y = 530
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):

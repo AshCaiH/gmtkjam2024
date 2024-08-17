@@ -1,0 +1,90 @@
+[gd_scene load_steps=5 format=3 uid="uid://dfo6p87ykgkfo"]
+
+[ext_resource type="Script" path="res://scenes/pause_menu.gd" id="1_76yc5"]
+[ext_resource type="PackedScene" uid="uid://dge1jk81cr6ja" path="res://scenes/VolumeSliders.tscn" id="1_pkf5n"]
+[ext_resource type="FontFile" uid="uid://benbjc1o0dtdb" path="res://Assets/Fonts/SuperSalad-qZgvV.ttf" id="2_oedhl"]
+[ext_resource type="FontFile" uid="uid://cv0o3tu5tlmnu" path="res://super-salad-font/SuperSalad-qZgvV.ttf" id="2_oewln"]
+
+[node name="PauseMenu" type="Control"]
+layout_mode = 3
+anchor_left = -0.102
+anchor_top = -0.25
+anchor_right = 0.102
+anchor_bottom = 0.25
+offset_left = 0.560013
+offset_right = -0.560013
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_76yc5")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(0.682353, 0.682353, 0.682353, 0.792157)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.724643, 0.724643, 0.724643, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("2_oedhl")
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+text = "[center]Pause![/center]"
+scroll_active = false
+
+[node name="Resume" type="Button" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("2_oedhl")
+theme_override_font_sizes/font_size = 32
+text = "Resume"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_fonts/normal_font = ExtResource("2_oewln")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[center]Sound Options[/center]"
+scroll_active = false
+
+[node name="Control" parent="MarginContainer/VBoxContainer" instance=ExtResource("1_pkf5n")]
+custom_minimum_size = Vector2(200, 120)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Restart Level" type="Button" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("2_oedhl")
+theme_override_font_sizes/font_size = 24
+text = "Restart Level
+"
+
+[node name="Main Menu" type="Button" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_fonts/font = ExtResource("2_oedhl")
+theme_override_font_sizes/font_size = 24
+text = "Main Menu"

@@ -11,6 +11,7 @@ func _ready():
 	start_button.pressed.connect(startgame)
 	credits.pressed.connect(creditswindow)
 	startvisibility()
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	pass

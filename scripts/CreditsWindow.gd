@@ -1,6 +1,7 @@
 extends ColorRect
 @onready var credits_window = %CreditsWindow
 @onready var credits_close_button = %"Credits Close Button"
+@onready var credits = %Credits
 
 
 # Called when the node enters the scene tree for the first time.
@@ -13,3 +14,4 @@ func _process(_delta):
 
 func closecreditswindow() -> void:
 	credits_close_button.pressed.connect(func() -> void: credits_window.visible = false)
+	
