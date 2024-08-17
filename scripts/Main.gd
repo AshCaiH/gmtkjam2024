@@ -5,6 +5,8 @@ var waterRising = false;
 var placementAngle = 0.0;
 var spongeCount = 10;
 
+var cameraslidePlayed = false;
+
 @onready var waterStartY = $Water.position.y;
 @onready var camera = $Camera3D
 
@@ -25,7 +27,9 @@ func _process(delta):
         if Globals.waterLevel < 1:
             Globals.waterLevel += 1.2 * delta;
         else:
-            cameraAnimator.play("camera_slide");
+            if !cameraslidePlayed: 
+                cameraAnimator.play("camera_slide");
+                cameraslidePlayed = true;
             waterRising = false;
 
     $Water.position.y = lerp(waterStartY, 0.05, Globals.waterLevel)
