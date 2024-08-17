@@ -1,14 +1,14 @@
-[gd_scene load_steps=15 format=3 uid="uid://bdprrncuiefpe"]
+[gd_scene load_steps=15 format=3 uid="uid://bjuc6fich53nc"]
 
 [ext_resource type="Script" path="res://scenes/MainMenu.gd" id="1_j7x3n"]
-[ext_resource type="Texture2D" uid="uid://bj13co87klm7r" path="res://Assets/white-square-tiled-texture-background.jpg" id="1_lphkx"]
-[ext_resource type="Texture2D" uid="uid://cni4myelc0ncn" path="res://Assets/JAW_logo_2.png" id="3_o7nx1"]
-[ext_resource type="AudioStream" uid="uid://cbchfcgh6iw6w" path="res://Assets/Music/Royal Banana.mp3" id="4_bn7n8"]
+[ext_resource type="Texture2D" uid="uid://bj13co87klm7r" path="res://assets/white-square-tiled-texture-background.jpg" id="1_lphkx"]
+[ext_resource type="Texture2D" uid="uid://cni4myelc0ncn" path="res://assets/JAW_logo_2.png" id="3_o7nx1"]
+[ext_resource type="AudioStream" uid="uid://cbchfcgh6iw6w" path="res://assets/Music/Royal Banana.mp3" id="4_bn7n8"]
 [ext_resource type="PackedScene" uid="uid://dge1jk81cr6ja" path="res://scenes/VolumeSliders.tscn" id="5_tp2dp"]
 [ext_resource type="FontFile" uid="uid://cv0o3tu5tlmnu" path="res://super-salad-font/SuperSalad-qZgvV.ttf" id="6_42grp"]
 [ext_resource type="Theme" uid="uid://b1f53v5lbr3mn" path="res://Theme/buttontheme.tres" id="6_rpcfu"]
 [ext_resource type="Script" path="res://scripts/CreditsWindow.gd" id="7_fb8i4"]
-[ext_resource type="FontFile" uid="uid://benbjc1o0dtdb" path="res://Assets/Fonts/SuperSalad-qZgvV.ttf" id="8_4pc3m"]
+[ext_resource type="FontFile" uid="uid://benbjc1o0dtdb" path="res://assets/Fonts/SuperSalad-qZgvV.ttf" id="8_4pc3m"]
 [ext_resource type="PackedScene" uid="uid://cmwxrtl4jlmwa" path="res://scenes/Level Select.tscn" id="10_r2kht"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gjbbe"]
@@ -74,7 +74,6 @@ texture = ExtResource("3_o7nx1")
 
 [node name="MMBackgroundMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_bn7n8")
-bus = &"Music"
 
 [node name="Control" parent="." instance=ExtResource("5_tp2dp")]
 custom_minimum_size = Vector2(300, 120)

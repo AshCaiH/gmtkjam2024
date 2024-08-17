@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=6 format=3 uid="uid://b1f53v5lbr3mn"]
 
-[ext_resource type="FontFile" uid="uid://benbjc1o0dtdb" path="res://Assets/Fonts/SuperSalad-qZgvV.ttf" id="1_mesj6"]
+[ext_resource type="FontFile" uid="uid://benbjc1o0dtdb" path="res://assets/Fonts/SuperSalad-qZgvV.ttf" id="1_mesj6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yllne"]
 bg_color = Color(0.286275, 0.729412, 0, 1)

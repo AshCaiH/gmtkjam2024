@@ -5,11 +5,10 @@ uniform vec3 COLOUR : source_color;
 varying vec3 pos;
 void vertex() { 
     pos = mat3(MODEL_MATRIX) * -VERTEX;
-    pos = pos - NODE_POSITION_WORLD;
 }
 
 void fragment() {	
-	ALPHA = smoothstep(pos.y, -1.0, -0.3);
+	ALPHA = smoothstep(pos.y, -0.8, -0.5);
     if (pos.y <= -0.5) {
         ALPHA = 0.0;
     }

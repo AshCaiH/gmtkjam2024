@@ -17,7 +17,7 @@ func _process(_delta):
 	pass
 	
 func startgame() -> void:
-	#get_tree().change_scene_to_file()
+	get_tree().change_scene_to_file("scenes/Main.tscn")
 	pass
 	
 func creditswindow() -> void:

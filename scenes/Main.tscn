@@ -139,6 +139,7 @@ uv1_scale = Vector3(2, 2, 2)
 size = Vector3(2, 0.1, 2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ka0r6"]
+size = Vector3(1, 1.59717, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kc2r3"]
 size = Vector3(2.36353, 1, 0.155579)
@@ -204,13 +205,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0434305, 0)
 shape = SubResource("BoxShape3D_fwfob")
 
 [node name="Cursor" parent="." instance=ExtResource("8_8844k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.33054, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.113275, 0)
 script = ExtResource("9_oteo0")
 
 [node name="Area3D" type="Area3D" parent="Cursor"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cursor/Area3D"]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.115321, 0)
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.0556042, 0)
 shape = SubResource("BoxShape3D_ka0r6")
 
 [node name="SpongePrime" parent="." instance=ExtResource("4_38k4i")]
