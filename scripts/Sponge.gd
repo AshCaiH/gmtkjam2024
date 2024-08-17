@@ -11,8 +11,8 @@ var baseYPos = position.y;
 
 # var customMesh = load("res://assets/models/rabbit.glb")
 
-@onready var mesh = $Sponge.get_node("Cube").mesh
-@onready var toy = $Toy;
+@onready var mesh = get_child(0).mesh
+# @onready var toy = $Toy;
 
 func _ready():
     add_to_group("sponges");
@@ -20,9 +20,9 @@ func _ready():
 func _physics_process(delta: float) -> void:
     if waterUp:
         # Handles bobbing effect, should match shader timing.
-        var offset = sin(Globals.time_elapsed*1.0 - to_global(position).x * 5) * 0.1 + \
-                      sin(Globals.time_elapsed*2.5 - to_global(position).z * 5) * 0.1
-        baseYPos = 0.9 + offset;
+        var offset = sin(Globals.time_elapsed*1.0 - to_global(position).x * 5) * 0.004 + \
+                      sin(Globals.time_elapsed*2.5 - to_global(position).z * 5) * 0.004
+        baseYPos = 0.15 + offset;
 
     position.y = baseYPos;
 
@@ -43,7 +43,7 @@ func _physics_process(delta: float) -> void:
                 or endpoints.z < -1 or endpoints.z > 1:
                 satisfied = true;
 
-        toy.scale = Vector3(1.0, 1.0, 1.0) / scale;
+        # toy.scale = Vector3(1.0, 1.0, 1.0) / scale;
         # mesh.material.uv1_scale = scale;
         # toy.position = Vector3(1 - scale.x, 0.5, 1 - scale.z);
 
