@@ -1,9 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://bk61pilqb5svl"]
-
-[ext_resource type="PackedScene" uid="uid://b34ps251caps1" path="res://assets/models/sponge.glb" id="1_3smvm"]
-[ext_resource type="Material" uid="uid://cdu5nemmbuoqi" path="res://materials/light_shaft.tres" id="2_rtdsg"]
-
-[node name="sponge" instance=ExtResource("1_3smvm")]
-
-[node name="Cube" parent="." index="0"]
-surface_material_override/0 = ExtResource("2_rtdsg")

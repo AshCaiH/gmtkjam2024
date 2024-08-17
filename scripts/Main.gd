@@ -29,7 +29,7 @@ func turnOnTap():
     waterRising = true;
 
     for sponge in sponges:
-        sponge = sponge.get_node("Sponge")
+        sponge = sponge.get_child(0);
         if sponge is Sponge:
             sponge.waterUp = true;
 
@@ -65,8 +65,11 @@ func _input(event):
 
     if event is InputEventMouseButton:
         if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+            var random = randi();
             if len($Cursor.touching) <= 1 and !waterRising:
-                var newSponge : Node3D = $SpongePrime.duplicate();
+                var newSponge : Node3D;
+                if random % 2: newSponge = $SpongePrime.duplicate();
+                else: newSponge = $RabbitPrime.duplicate();
                 newSponge.visible = true;
                 newSponge.position = $Cursor.position;
                 newSponge.position.y = 0.087;

@@ -20,7 +20,7 @@ vec3 AdjustContrastCurve(vec3 color, float contrast) {
 
 void fragment() {
 	vec3 newColour = textureLod(BEHIND_TEXTURE, SCREEN_UV, 1.0).rgb;
-	newColour = vec3((newColour.r + newColour.g + newColour.b) / 6.0);
+	newColour = vec3((newColour.r + newColour.g + newColour.b) / 3.5);
 	ALBEDO = newColour * COLOUR;
 	SPECULAR = 0.3;
 	ROUGHNESS = 0.0;

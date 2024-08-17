@@ -1,37 +1,22 @@
-[gd_scene load_steps=6 format=3 uid="uid://cwnae2n7xm8yn"]
+[gd_scene load_steps=4 format=3 uid="uid://k4hohlm44g3f"]
 
-[ext_resource type="Script" path="res://scripts/Sponge.gd" id="1_koycv"]
-[ext_resource type="PackedScene" uid="uid://b34ps251caps1" path="res://assets/models/sponge.glb" id="3_nprsm"]
+[ext_resource type="PackedScene" uid="uid://b34ps251caps1" path="res://assets/models/sponge.glb" id="1_meqpd"]
+[ext_resource type="Script" path="res://scripts/Sponge.gd" id="2_itb6r"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_3uocc"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_vf8wy"]
+points = PackedVector3Array(0.0417972, 0.05, 0.0417972, 0.0417972, 0.05, -0.041807, -0.041807, 0.05, 0.0417972, 0.0417972, 0.047592, 0.047592, 0.0465251, 0.0465251, 0.0465251, 0.047592, 0.047592, 0.0417972, 0.047592, 0.047592, -0.041807, 0.0465251, 0.0465251, -0.0465348, 0.0417972, 0.047592, -0.0476018, -0.041807, 0.05, -0.041807, -0.0476018, 0.047592, 0.0417972, -0.0465348, 0.0465251, 0.0465251, -0.041807, 0.047592, 0.047592, 0.0417972, 0.0417972, 0.05, 0.047592, 0.0417972, 0.047592, 0.05, 0.0417972, 0.0417972, 0.05, 0.0417972, -0.041807, 0.047592, 0.0417972, -0.0476018, 0.0417972, 0.0417972, -0.05, -0.041807, 0.047592, -0.0476018, -0.0465348, 0.0465251, -0.0465348, -0.0476018, 0.047592, -0.041807, -0.05, 0.0417972, 0.0417972, -0.0476018, 0.0417972, 0.047592, -0.041807, 0.0417972, 0.05, 0.0417972, -0.041807, 0.05, 0.047592, -0.041807, 0.047592, 0.05, -0.041807, 0.0417972, 0.05, -0.041807, -0.041807, 0.047592, -0.041807, -0.0476018, 0.0417972, -0.041807, -0.05, -0.041807, 0.0417972, -0.05, -0.0476018, 0.0417972, -0.0476018, -0.05, 0.0417972, -0.041807, -0.05, -0.041807, 0.0417972, -0.0476018, -0.041807, 0.047592, -0.041807, -0.041807, 0.05, 0.0417972, -0.0476018, 0.047592, 0.0465251, -0.0465348, 0.0465251, 0.047592, -0.0476018, 0.0417972, 0.047592, -0.0476018, -0.041807, 0.0465251, -0.0465348, -0.0465348, 0.0417972, -0.0476018, -0.0476018, -0.041807, -0.041807, -0.05, -0.0476018, -0.041807, -0.0476018, -0.05, -0.041807, -0.041807, -0.0476018, -0.0476018, 0.0417972, -0.0465348, -0.0465348, 0.0465251, -0.041807, -0.0476018, 0.047592, 0.0417972, -0.05, 0.0417972, 0.0417972, -0.05, -0.041807, -0.041807, -0.0476018, -0.0476018, -0.0465348, -0.0465348, -0.0465348, -0.0476018, -0.0476018, -0.041807, -0.041807, -0.05, 0.0417972, -0.041807, -0.05, -0.041807)
 
-[sub_resource type="BoxMesh" id="BoxMesh_raclh"]
+[node name="sponge" instance=ExtResource("1_meqpd")]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_bkrud"]
-
-[node name="Sponge" type="Node3D"]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
-
-[node name="Sponge" type="RigidBody3D" parent="."]
-gravity_scale = 0.0
-sleeping = true
+[node name="mesh-rigid" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0494008, 0)
 can_sleep = false
 freeze = true
-script = ExtResource("1_koycv")
+script = ExtResource("2_itb6r")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Sponge"]
-visible = false
-shape = SubResource("BoxShape3D_3uocc")
+[node name="Area3D" type="Area3D" parent="mesh-rigid" index="2"]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Sponge"]
-visible = false
-mesh = SubResource("BoxMesh_raclh")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="mesh-rigid/Area3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_vf8wy")
 
-[node name="Area3D" type="Area3D" parent="Sponge"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Sponge/Area3D"]
-shape = SubResource("BoxShape3D_bkrud")
-
-[node name="Sponge" parent="Sponge" instance=ExtResource("3_nprsm")]
-
-[connection signal="body_entered" from="Sponge/Area3D" to="Sponge" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="mesh-rigid/Area3D" to="mesh-rigid" method="_on_area_3d_body_entered"]
