@@ -2,6 +2,7 @@ extends Node3D
 
 var sponges;
 var waterRising = false;
+var score = 0;
 @onready var camera = $Camera3D
 
 func _ready():
@@ -16,6 +17,15 @@ func _process(delta):
 func _physics_process(delta: float) -> void:
 	Globals.time_elapsed += delta;
 	RenderingServer.global_shader_parameter_set("time_elapsed", Globals.time_elapsed + delta)
+	
+	sponges = $Sponges.get_children();
+	score = 0;
+	for sponge in sponges:
+		sponge = sponge.get_node("Sponge")
+		if sponge is Sponge:
+			score += sponge.area
+	
+	print(score)
 
 func _input(event):
 	if event is InputEventKey:
