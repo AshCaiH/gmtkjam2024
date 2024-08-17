@@ -5,12 +5,16 @@ var waterRising = false;
 var placementAngle = 0.0;
 var spongeCount = 10;
 
-var waterPosition = 0;
+var cameraslidePlayed = false;
+
 @onready var waterStartY = $Water.position.y;
 @onready var camera = $Camera3D
 
+@onready var cameraAnimator : AnimationPlayer = camera.get_child(0);
+
 func _ready():
-    # sponges = $Sponges.get_children()
+    cameraAnimator = camera.get_child(0)
+    cameraAnimator.play("CameraStart");
 
     
     getScore();
@@ -20,21 +24,20 @@ func _process(delta):
     if spongeCount == 0: turnOnTap();
 
     if waterRising:
-        if waterPosition < 1:
-            waterPosition += 1.5 * delta;
+        if Globals.waterLevel < 1:
+            Globals.waterLevel += 1.2 * delta;
+        else:
+            if !cameraslidePlayed: 
+                cameraAnimator.play("camera_slide");
+                cameraslidePlayed = true;
+            waterRising = false;
 
-        $Water.position.y = lerp(waterStartY, 0.05, waterPosition)
-        # if $Water.position.y < 0.05:
-        #     $Water.position.y += 0.3 * delta;
+    $Water.position.y = lerp(waterStartY, 0.05, Globals.waterLevel)
 
 func turnOnTap():
     sponges = $Sponges.get_children()
+    Globals.water_risen = true;
     waterRising = true;
-
-    for sponge in sponges:
-        sponge = sponge.get_child(0);
-        if sponge is Sponge:
-            sponge.waterUp = true;
 
 func getScore():
     var resolution = 100;
@@ -69,7 +72,9 @@ func _physics_process(delta: float) -> void:
 func _input(event):
     if event is InputEventKey:
         if event.keycode == KEY_W: turnOnTap();
-        if event.keycode == KEY_R: get_tree().reload_current_scene()
+        if event.keycode == KEY_R and !Input.is_key_pressed(KEY_R): 
+            Globals.resetWater();
+            get_tree().reload_current_scene()
 
     if event is InputEventMouseMotion:
     # if event.is_pressed():
