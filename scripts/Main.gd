@@ -5,7 +5,8 @@ var waterRising = false;
 @onready var camera = $Camera3D
 
 func _ready():
-    sponges = $Sponges.get_children()
+    # sponges = $Sponges.get_children()
+    pass;
 
 func _process(delta):
     if waterRising:
@@ -19,11 +20,11 @@ func _physics_process(delta: float) -> void:
 func _input(event):
     if event is InputEventKey:
         if event.keycode == KEY_W:
-
+            sponges = $Sponges.get_children()
             waterRising = true;
 
             for sponge in sponges:
-                sponge = sponge.get_node("RigidBody3D")
+                sponge = sponge.get_node("Sponge")
                 if sponge is Sponge:
                     sponge.waterUp = true;
 
@@ -45,3 +46,12 @@ func _input(event):
             $Cursor.visible = true;
         else:
             $Cursor.visible = false;
+
+    if event is InputEventMouseButton:
+        if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+            if len($Cursor.touching) <= 1 and !waterRising:
+                var newSponge : Node3D = $SpongePrime.duplicate();
+                newSponge.visible = true;
+                newSponge.position = $Cursor.position;
+                newSponge.position.y = 0.087;
+                $Sponges.add_child(newSponge);
