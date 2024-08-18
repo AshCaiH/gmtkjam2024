@@ -10,6 +10,8 @@ var cameraslidePlayed = false;
 @onready var waterStartY = $Water.position.y;
 @onready var cursorStartY = $Cursor.position.y;
 @onready var camera = $Camera3D
+@onready var sounds = $Sounds.get_children();
+@onready var flushSound = $FlushSFX;
 
 @onready var cameraAnimator : AnimationPlayer = camera.get_child(0);
 
@@ -47,9 +49,11 @@ func gameOver():
     summary.progressbartween();
 
 func turnOnTap():
+    if Globals.waterLevel != 0: return;
     sponges = $Sponges.get_children()
     Globals.water_risen = true;
     waterRising = true;
+    flushSound.play();
 
 func getScore():
     var resolution = 100;
@@ -127,3 +131,5 @@ func _input(event):
                     placementAngle = randf() * 360;
 
                     spongeCount -= 1;
+
+                    sounds.pick_random().play();
