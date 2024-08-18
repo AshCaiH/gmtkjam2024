@@ -119,16 +119,24 @@ func _input(event):
             elif Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
                 var random = randi();
                 if len($Cursor.touching) <= 1 and Globals.waterLevel == 0:
+                    var spongeList = $SpongeList.get_children();
+                    spongeList.pick_random().queue_free()
                     var newSponge : Node3D;
-                    if random % 2: newSponge = $SpongePrime.duplicate();
-                    else: newSponge = $RabbitPrime.duplicate();
+                    if Globals.hardMode:
+                        if random % 2: newSponge = $SpongePrime.duplicate();                        
+                        else: newSponge = $RabbitPrime.duplicate();
+                    else:
+                        newSponge = $SpongePrime.duplicate();  
                     newSponge.visible = true;
                     newSponge.position = $Cursor.position;
                     newSponge.position.y = 0.087;
+
                     newSponge.rotation_degrees.y = placementAngle;
                     $Sponges.add_child(newSponge);
 
-                    placementAngle = randf() * 360;
+                    if Globals.hardMode:
+                        placementAngle = randf() * 360;
+
 
                     spongeCount -= 1;
 

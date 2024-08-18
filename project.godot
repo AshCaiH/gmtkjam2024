@@ -19,7 +19,7 @@ config/icon="res://icon.svg"
 
 MaxLvlNo="*res://scripts/max_lvl_no.gd"
 Globals="*res://scripts/Globals.gd"
-MmBackgroundMusic="*res://scenes/mm_background_music.tscn"
+BackgroundMusic="*res://scenes/BackgroundMusic.tscn"
 
 [display]
 

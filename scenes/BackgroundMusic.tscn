@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://4s78ac5s18uy"]
+
+[ext_resource type="AudioStream" uid="uid://w38oiv8kbg75" path="res://assets/Music/Super Friendly Radio Edit.ogg" id="1_3hknl"]
+
+[node name="BackgroundMusic" type="Node2D"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_3hknl")
+volume_db = 10.0
+autoplay = true

@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://c6l4drqpqfv23"]
+[gd_scene load_steps=4 format=3 uid="uid://c6l4drqpqfv23"]
 
 [ext_resource type="AudioStream" uid="uid://d1aeyda67rnnu" path="res://assets/sfx/563190__fmaudio__squeezing-sponge-filled-with-water-rapidly-1.wav" id="1_7pklj"]
-[ext_resource type="AudioStream" uid="uid://c8s1c4dg8bamm" path="res://assets/sfx/563189__fmaudio__squeezing-sponge-filled-with-water-rapidly-2.wav" id="2_yohpj"]
 [ext_resource type="AudioStream" uid="uid://dsuc6l33hi7n8" path="res://assets/sfx/563187__fmaudio__squeezing-sponge-filled-with-water-rapidly-4.wav" id="3_mo0qr"]
 [ext_resource type="AudioStream" uid="uid://0kb3uwpnjtfn" path="res://assets/sfx/563191__fmaudio__squeezing-sponge-filled-with-water-rapidly-5.wav" id="4_b5bht"]
 
@@ -9,10 +8,6 @@
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_7pklj")
-bus = &"SFX"
-
-[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_yohpj")
 bus = &"SFX"
 
 [node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="."]

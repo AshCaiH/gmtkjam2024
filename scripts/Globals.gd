@@ -6,6 +6,8 @@ var water_risen = false;
 var waterLevel = 0; # Goes from 0-1.
 var score = 0;
 
+var hardMode = false;
+
 func resetWater():
     waterLevel = 0;
     water_risen = false;
