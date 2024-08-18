@@ -3,17 +3,12 @@
 [ext_resource type="PackedScene" uid="uid://6oouuk7p3231" path="res://assets/models/Soap.glb" id="1_043gn"]
 [ext_resource type="Texture2D" uid="uid://cx5sswuoe7dcd" path="res://assets/models/Soap_soaptex.png" id="2_5ridk"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ms6rl"]
-albedo_color = Color(0.757754, 0.211768, 0.312527, 1)
-roughness = 0.33
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8fn4h"]
+albedo_color = Color(0.234, 0.52, 0.510467, 1)
 roughness_texture = ExtResource("2_5ridk")
-normal_texture = ExtResource("2_5ridk")
 rim_enabled = true
-rim_tint = 0.0
-heightmap_scale = -16.0
-heightmap_texture = ExtResource("2_5ridk")
 
 [node name="Soap" instance=ExtResource("1_043gn")]
 
 [node name="Roundcube" parent="." index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_ms6rl")
+surface_material_override/0 = SubResource("StandardMaterial3D_8fn4h")

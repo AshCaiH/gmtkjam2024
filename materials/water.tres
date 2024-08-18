@@ -5,4 +5,4 @@
 [resource]
 render_priority = 0
 shader = ExtResource("1_sycfy")
-shader_parameter/COLOUR = Color(0.412821, 0.905973, 1, 1)
+shader_parameter/COLOUR = Color(2.21401e-06, 0.659888, 0.796424, 1)

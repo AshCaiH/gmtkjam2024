@@ -1,6 +1,7 @@
 extends Node2D
-@onready var mm_background_music = $MMBackgroundMusic
+# @onready var mm_background_music = $MMBackgroundMusic
 @onready var start_button = %"Start Button"
+@onready var hard_button = %"Hard Button"
 @onready var credits = %Credits
 @onready var credits_window = %CreditsWindow
 @onready var level_select = %"Level Select"
@@ -9,8 +10,13 @@ extends Node2D
 func _ready():
 	# mm_background_music.play()
 	start_button.pressed.connect(startgame)
+	hard_button.pressed.connect(hardMode)
 	credits.pressed.connect(creditswindow)
 	startvisibility()
+
+func hardMode():
+	Globals.hardMode = true;
+	startgame()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):

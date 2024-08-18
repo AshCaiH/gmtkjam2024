@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://dbrsc04uan3vi"]
+[gd_scene load_steps=35 format=3 uid="uid://dbrsc04uan3vi"]
 
 [ext_resource type="Script" path="res://scripts/Main.gd" id="1_rg8f5"]
 [ext_resource type="PackedScene" uid="uid://d118bv6ro5bi8" path="res://prefabs/Rabbit.tscn" id="2_6fk1l"]
@@ -10,13 +10,22 @@
 [ext_resource type="Texture2D" uid="uid://d1gk6ctjcvtfq" path="res://materials/marble_mosaic_tiles_rough_1k.png" id="6_o7rfl"]
 [ext_resource type="PackedScene" uid="uid://bbv0spkb8ld7s" path="res://assets/models/light_shaft.tscn" id="8_8844k"]
 [ext_resource type="Script" path="res://scripts/Cursor.gd" id="9_oteo0"]
+[ext_resource type="Texture2D" uid="uid://42ih7tt4twt2" path="res://materials/floor_tiles_02_diff_1k.jpg" id="9_wa0r3"]
+[ext_resource type="Texture2D" uid="uid://bpccs8ww7u363" path="res://materials/floor_tiles_02_rough_1k.jpg" id="10_4km5d"]
 [ext_resource type="PackedScene" uid="uid://cegoat2rxvx05" path="res://scenes/summarybox.tscn" id="11_8ugpv"]
+[ext_resource type="PackedScene" uid="uid://crbmsy2dplmc7" path="res://prefabs/sponge_2.tscn" id="11_fbxvg"]
+[ext_resource type="PackedScene" uid="uid://c6l4drqpqfv23" path="res://prefabs/noises.tscn" id="12_apo2n"]
+[ext_resource type="PackedScene" uid="uid://dsf6h2akog6kg" path="res://prefabs/RabbitStaticMesh.tscn" id="13_giq5s"]
+[ext_resource type="AudioStream" uid="uid://cmtr1kddgso6b" path="res://assets/sfx/07047194.wav" id="13_m23qr"]
+[ext_resource type="PackedScene" uid="uid://c0r8puuosd67g" path="res://prefabs/soap.tscn" id="16_5jmgj"]
+[ext_resource type="PackedScene" uid="uid://cp2pnmyox377o" path="res://prefabs/shampoo.tscn" id="16_lk6xc"]
+[ext_resource type="PackedScene" uid="uid://pu02paqc4g71" path="res://prefabs/tub.tscn" id="17_p6chu"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_sswqg"]
 size = Vector3(2, 0.5, 2)
-subdivide_width = 10
-subdivide_height = 10
-subdivide_depth = 10
+subdivide_width = 50
+subdivide_height = 50
+subdivide_depth = 50
 
 [sub_resource type="Animation" id="Animation_3njgp"]
 resource_name = "CameraStart"
@@ -114,7 +123,7 @@ panorama = ExtResource("4_7c8vk")
 sky_material = SubResource("PanoramaSkyMaterial_6oywk")
 
 [sub_resource type="Environment" id="Environment_15veq"]
-background_mode = 1
+background_mode = 2
 background_color = Color(0.126956, 0.220906, 0.283745, 1)
 background_intensity = 1.0
 sky = SubResource("Sky_dw7s3")
@@ -139,6 +148,13 @@ uv1_scale = Vector3(2, 2, 2)
 [sub_resource type="BoxShape3D" id="BoxShape3D_fwfob"]
 size = Vector3(2, 0.1, 2)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xlgqt"]
+albedo_color = Color(0.46487, 0.494045, 0.687158, 1)
+albedo_texture = ExtResource("9_wa0r3")
+roughness_texture = ExtResource("10_4km5d")
+normal_enabled = true
+uv1_scale = Vector3(5, 5, 5)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_ka0r6"]
 size = Vector3(1, 1.59717, 1)
 
@@ -149,20 +165,20 @@ size = Vector3(2.36353, 1, 0.155579)
 script = ExtResource("1_rg8f5")
 
 [node name="Water" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.595939, 0, 0, 0, 1, 0, -0.16296, 0)
+transform = Transform3D(1.00675, 0, 0, 0, 0.595939, 0, 0, 0, 1.00869, 0.0151386, -0.171971, -0.0374622)
 mesh = SubResource("BoxMesh_sswqg")
 surface_material_override/0 = ExtResource("2_tsmr1")
 
 [node name="Sponges" type="Node3D" parent="."]
 
 [node name="Rabbit" parent="Sponges" instance=ExtResource("2_6fk1l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0945058, 0.0967297, -0.0702031)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0457976, 0.0967297, -0.188764)
 
 [node name="Rabbit2" parent="Sponges" instance=ExtResource("2_6fk1l")]
 transform = Transform3D(-0.8308, 0, 0.556571, 0, 1, 0, -0.556571, 0, -0.8308, -0.62053, 0.0967297, -0.483573)
 
 [node name="Rabbit3" parent="Sponges" instance=ExtResource("2_6fk1l")]
-transform = Transform3D(-0.8308, 0, 0.556571, 0, 1, 0, -0.556571, 0, -0.8308, 0.292637, 0.0967297, -0.46412)
+transform = Transform3D(-0.8308, 0, 0.556571, 0, 1, 0, -0.556571, 0, -0.8308, 0.586971, 0.0967297, -0.596042)
 
 [node name="Rabbit4" parent="Sponges" instance=ExtResource("2_6fk1l")]
 transform = Transform3D(-0.796709, 0, -0.604363, 0, 1, 0, 0.604363, 0, -0.796709, 0.374943, 0.0967297, 0.482617)
@@ -187,8 +203,9 @@ environment = SubResource("Environment_15veq")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.681189, 0.729611, 0.0604216, 0.551828, 0.45746, 0.697293, 0.481112, 0.50833, -0.714235, 1.21694, 1, 2.3307)
 shadow_enabled = true
-shadow_bias = 0.0
-shadow_normal_bias = 0.952
+shadow_bias = 1.818
+shadow_normal_bias = 1.76
+shadow_transmittance_bias = 4.898
 shadow_blur = 6.238
 
 [node name="Floor" type="MeshInstance3D" parent="."]
@@ -204,6 +221,12 @@ collision_mask = 513
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/FloorDetection"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0434305, 0)
 shape = SubResource("BoxShape3D_fwfob")
+
+[node name="Floor2" type="MeshInstance3D" parent="."]
+transform = Transform3D(4.17534, 0, 0, 0, 1, 0, 0, 0, 4.17534, -0.344756, -0.0403613, 0)
+layers = 512
+mesh = SubResource("PlaneMesh_0pkqa")
+surface_material_override/0 = SubResource("StandardMaterial3D_xlgqt")
 
 [node name="Cursor" parent="." instance=ExtResource("8_8844k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.113275, 0)
@@ -222,6 +245,12 @@ visible = false
 [node name="RabbitPrime" parent="." instance=ExtResource("2_6fk1l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.01136, 0.0410178, 0.159195)
 visible = false
+
+[node name="RabbitDeco2" parent="." instance=ExtResource("13_giq5s")]
+transform = Transform3D(-2.44343, 0, 1.14875, 0, 2.7, 0, -1.14875, 0, -2.44343, -2.69152, 0.198858, 0.86177)
+
+[node name="RabbitDeco" parent="." instance=ExtResource("13_giq5s")]
+transform = Transform3D(-5.93852, 0.132586, -5.79554e-09, 0, -2.59646e-07, -5.94, -0.132586, -5.93852, 2.59581e-07, -2.37228, 0.198858, -2.10394)
 
 [node name="Perimeter" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0802569, -1.13564)
@@ -275,6 +304,68 @@ offset_left = 865.0
 offset_top = 170.0
 offset_right = -115.0
 offset_bottom = -250.0
+
+[node name="Sounds" parent="." instance=ExtResource("12_apo2n")]
+
+[node name="FlushSFX" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.72573, -1.09384)
+stream = ExtResource("13_m23qr")
+volume_db = -25.0
+bus = &"SFX"
+
+[node name="Soap2" parent="." instance=ExtResource("16_5jmgj")]
+transform = Transform3D(-0.337681, 0, 0.0858666, 0, 0.348427, 0, -0.0858666, 0, -0.337681, -1.38846, -0.0236448, 0.849911)
+
+[node name="sponge13" parent="." instance=ExtResource("11_fbxvg")]
+transform = Transform3D(0.956422, 0, 0.291988, 0, 1, 0, -0.291988, 0, 0.956422, -2.79274, 0.0182272, -0.122462)
+
+[node name="sponge14" parent="." instance=ExtResource("11_fbxvg")]
+transform = Transform3D(2.48089, 0, 2.23, 0, 1, 0, -2.16201, 0, 2.55891, -2.33417, 0.0182269, 1.51425)
+
+[node name="SpongeList" type="Node3D" parent="."]
+transform = Transform3D(0.956422, 0, 0.291988, 0, 1, 0, -0.291988, 0, 0.956422, 1.96712, 0.110807, -0.534477)
+
+[node name="sponge3" parent="SpongeList" instance=ExtResource("11_fbxvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.658191, 0, 0.0451607)
+
+[node name="sponge4" parent="SpongeList" instance=ExtResource("11_fbxvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.665549, 0, 0.217316)
+
+[node name="sponge5" parent="SpongeList" instance=ExtResource("11_fbxvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.665242, 0, 0.378843)
+
+[node name="sponge6" parent="SpongeList" instance=ExtResource("11_fbxvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.663788, 0, 0.517551)
+
+[node name="sponge7" parent="SpongeList" instance=ExtResource("11_fbxvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.665714, 0, 0.656704)
+
+[node name="sponge8" parent="SpongeList" instance=ExtResource("11_fbxvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.500552, 0, 0.063111)
+
+[node name="sponge9" parent="SpongeList" instance=ExtResource("11_fbxvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.498431, 0, 0.210413)
+
+[node name="sponge10" parent="SpongeList" instance=ExtResource("11_fbxvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.502248, 0, 0.358364)
+
+[node name="sponge11" parent="SpongeList" instance=ExtResource("11_fbxvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49654, 0, 0.48704)
+
+[node name="sponge12" parent="SpongeList" instance=ExtResource("11_fbxvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.501721, 0, 0.665148)
+
+[node name="Soap3" parent="." instance=ExtResource("16_5jmgj")]
+transform = Transform3D(-0.46532, 0, -0.137719, 0, 0.485273, 0, 0.137719, 0, -0.46532, 1.51904, -0.0236447, -0.026143)
+
+[node name="Shampoo2" parent="." instance=ExtResource("16_lk6xc")]
+transform = Transform3D(0.247377, 0, 0.180814, 0, 0.306414, 0, -0.180814, 0, 0.247377, 1.13597, -0.0548251, 1.16701)
+
+[node name="Shampoo3" parent="." instance=ExtResource("16_lk6xc")]
+transform = Transform3D(5.4951e-09, 0.125713, 0.279438, 0.306414, -1.33938e-08, -2.58319e-16, 1.22146e-08, 0.279438, -0.125713, -1.59399, 0.123523, -1.19775)
+
+[node name="Tub2" parent="." instance=ExtResource("17_p6chu")]
+transform = Transform3D(0.0680704, 0, 0, 0, 0.152588, 0, 0, 0, 0.0680704, 0, 0.0351179, 0)
 
 [connection signal="body_entered" from="Cursor/Area3D" to="Cursor" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Cursor/Area3D" to="Cursor" method="_on_area_3d_body_exited"]

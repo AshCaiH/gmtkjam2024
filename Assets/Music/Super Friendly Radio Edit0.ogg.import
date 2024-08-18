@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bb6cqubwi506b"
+path="res://.godot/imported/Super Friendly Radio Edit0.ogg-2103c0a97b8bb259a8ef7ca1bfb945ca.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Music/Super Friendly Radio Edit0.ogg"
+dest_files=["res://.godot/imported/Super Friendly Radio Edit0.ogg-2103c0a97b8bb259a8ef7ca1bfb945ca.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

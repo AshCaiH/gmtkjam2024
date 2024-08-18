@@ -25,7 +25,7 @@ func dialogue() -> void:
 	
 func progressbartween() -> void:
 	var tween := create_tween()
-	tween.tween_property(progress_bar, "value", Globals.score, 2.5).set_trans(tween.TRANS_ELASTIC)
+	tween.tween_property(progress_bar, "value", Globals.score, 1.5).set_trans(tween.TRANS_QUAD)
 	# tween.finished.connect(commentandbutton)
 
 func commentandbutton() -> void:

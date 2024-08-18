@@ -1,11 +1,11 @@
 [gd_scene load_steps=9 format=3 uid="uid://dge1jk81cr6ja"]
 
-[ext_resource type="FontFile" uid="uid://benbjc1o0dtdb" path="res://Assets/Fonts/SuperSalad-qZgvV.ttf" id="1_453va"]
+[ext_resource type="FontFile" uid="uid://benbjc1o0dtdb" path="res://assets/Fonts/SuperSalad-qZgvV.ttf" id="1_453va"]
 [ext_resource type="Script" path="res://scripts/MusicSlider.gd" id="1_pxyyh"]
 [ext_resource type="Script" path="res://scripts/SFXSlider.gd" id="2_s21b0"]
-[ext_resource type="Texture2D" uid="uid://du75fgx3nvq5m" path="res://Assets/soundicon.svg" id="2_w0o4g"]
+[ext_resource type="Texture2D" uid="uid://ntu1ao1sq66a" path="res://assets/soundicon.svg" id="2_w0o4g"]
 [ext_resource type="Script" path="res://scripts/MasterSlider.gd" id="3_62ub2"]
-[ext_resource type="Texture2D" uid="uid://c2nwa71jxqnwv" path="res://Assets/soundiconmuted.svg" id="3_pam6r"]
+[ext_resource type="Texture2D" uid="uid://cf3l7akj4utn0" path="res://assets/soundiconmuted.svg" id="3_pam6r"]
 [ext_resource type="FontFile" uid="uid://cv0o3tu5tlmnu" path="res://super-salad-font/SuperSalad-qZgvV.ttf" id="5_n35l3"]
 
 [sub_resource type="GDScript" id="GDScript_usv4y"]

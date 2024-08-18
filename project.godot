@@ -13,13 +13,16 @@ config_version=5
 config/name="GMTKJam2024"
 run/main_scene="res://scenes/MainMenu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
+boot_splash/bg_color=Color(0.320811, 0.508129, 0.756968, 1)
+boot_splash/image="res://assets/images/WPB_Logo_1.png"
 config/icon="res://icon.svg"
+boot_splash/minimum_display_time=3000
 
 [autoload]
 
 MaxLvlNo="*res://scripts/max_lvl_no.gd"
 Globals="*res://scripts/Globals.gd"
-MmBackgroundMusic="*res://scenes/mm_background_music.tscn"
+BackgroundMusic="*res://scenes/BackgroundMusic.tscn"
 
 [display]
 

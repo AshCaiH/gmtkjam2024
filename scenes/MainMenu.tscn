@@ -72,6 +72,7 @@ scale = Vector2(0.66, 0.66)
 texture = ExtResource("3_o7nx1")
 
 [node name="Control" parent="." instance=ExtResource("5_tp2dp")]
+visible = false
 custom_minimum_size = Vector2(300, 120)
 offset_left = 958.0
 offset_top = 24.0
@@ -85,9 +86,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 440.0
+offset_left = 448.0
 offset_top = 576.0
-offset_right = 840.0
+offset_right = 848.0
 offset_bottom = 666.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -96,6 +97,27 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("6_rpcfu")
 text = "Play!"
+
+[node name="Hard Button" type="Button" parent="."]
+unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 946.0
+offset_top = 576.0
+offset_right = 1096.0
+offset_bottom = 666.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.0022855
+pivot_offset = Vector2(200, 46)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("6_rpcfu")
+theme_override_font_sizes/font_size = 29
+text = "Hard Mode"
 
 [node name="Credits" type="Button" parent="."]
 unique_name_in_owner = true
@@ -133,7 +155,7 @@ offset_left = 390.0
 offset_top = 24.0
 offset_right = 890.0
 offset_bottom = 674.0
-color = Color(0.784314, 1, 1, 1)
+color = Color(0.33547, 0.659649, 0.826505, 1)
 script = ExtResource("7_fb8i4")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CreditsWindow"]
@@ -162,14 +184,15 @@ size_flags_vertical = 3
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("8_4pc3m")
 bbcode_enabled = true
-text = "Cai (Programming): https://abicai.itch.io/
+text = "Cai (Programming and 3D art): https://abicai.itch.io/
 LittleBattler (Programming): https://littlebattler.itch.io/
-Jamous (Moral Support):
-Shakibone (3D Art): https://shakibone.itch.io/
+Jamous (Sourcing ASSETS and Moral Support):
+Shakibone (2d and 3D Art): https://shakibone.itch.io/
 Two Separate Gorillas (UI): https://www.TwoSeparateGorillas.co.uk
 
 Super Salad Font by All Super Font
-White Tiled Square Texture by Freepik.com"
+White Tiled Square Texture by Freepik.com
+All thrid party assets used with permission"
 fit_content = true
 
 [node name="Credits Close Button" type="Button" parent="CreditsWindow/VBoxContainer"]
