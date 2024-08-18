@@ -5,3 +5,4 @@
 [node name="MMBackgroundMusic" type="AudioStreamPlayer"]
 stream = ExtResource("1_g1cal")
 autoplay = true
+bus = &"Music"
