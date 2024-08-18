@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://ddhhov2wktyq5" path="res://assets/models/Shampoo.glb" id="1_v10rt"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_olbsx"]
-albedo_color = Color(0.913363, 0.570971, 0.568162, 1)
+albedo_color = Color(0.547028, 0.4779, 0.59, 1)
 roughness = 0.0
 rim_enabled = true
 
