@@ -1,0 +1,76 @@
+[gd_scene load_steps=7 format=3 uid="uid://dlsyosse0b76j"]
+
+[ext_resource type="Shader" path="res://Assets/MMBackground.gdshader" id="1_vxfm2"]
+[ext_resource type="Texture2D" uid="uid://xto6lwrmdug" path="res://Assets/water-drop-svgrepo-comblue.svg" id="2_2081k"]
+[ext_resource type="FontFile" uid="uid://benbjc1o0dtdb" path="res://Assets/Fonts/SuperSalad-qZgvV.ttf" id="3_vaiga"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_exw7n"]
+shader = ExtResource("1_vxfm2")
+shader_parameter/scroll_speed = 0.16
+shader_parameter/angle_degrees = 60.0
+shader_parameter/repeat_x = 20.0
+shader_parameter/repeat_y = 12.0
+shader_parameter/row_offset = 1.0
+shader_parameter/texture_to_scroll = ExtResource("2_2081k")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kqdg0"]
+bg_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4mdn3"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="LoadingScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_exw7n")
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="ColorRect"]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/CenterContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect/CenterContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="LoadingText" type="Label" parent="ColorRect/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_vaiga")
+theme_override_font_sizes/font_size = 96
+text = "We are loading..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="ColorRect/CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/background = SubResource("StyleBoxFlat_kqdg0")
+theme_override_styles/fill = SubResource("StyleBoxFlat_4mdn3")
+
+[node name="Label" type="Label" parent="ColorRect/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_vaiga")
+theme_override_font_sizes/font_size = 36
+text = "This game is by Cai, Two Separate Gorillas, Shakibone, LittleBattler and Jamous."
+horizontal_alignment = 1

@@ -13,6 +13,7 @@ var nextscene := ""
 func _ready():
 	commenttimer.start()
 	buttonpress()
+	dialogue()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -32,9 +33,11 @@ func commentandbutton() -> void:
 	
 	if filledvolume >= targetvolume:
 		try_again.text = "Next Level!"
+		commentlabel.text = "Great Job!"
 		nextscene = ""
 	else:
 		try_again.text = "Try Again!"
+		commentlabel.text = "So Close!"
 		nextscene = ""
 	var tween3 := create_tween()
 	tween3.tween_property(try_again, "modulate.a", 1, 0)
