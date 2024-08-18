@@ -5,36 +5,51 @@ var waterRising = false;
 var placementAngle = 0.0;
 var spongeCount = 10;
 
-var waterPosition = 0;
+var cameraslidePlayed = false;
+
 @onready var waterStartY = $Water.position.y;
+@onready var cursorStartY = $Cursor.position.y;
 @onready var camera = $Camera3D
 
+@onready var cameraAnimator : AnimationPlayer = camera.get_child(0);
+
 func _ready():
-    # sponges = $Sponges.get_children()
+    cameraAnimator = camera.get_child(0)
+    cameraAnimator.play("CameraStart");
 
     
     getScore();
     pass;
 
 func _process(delta):
-    if spongeCount == 0: turnOnTap();
+    if spongeCount == 0 and Globals.waterLevel == 0: turnOnTap();
 
     if waterRising:
-        if waterPosition < 1:
-            waterPosition += 1.5 * delta;
+        if Globals.waterLevel < 1:
+            Globals.waterLevel += 1.2 * delta;
+        else:
+            if !cameraslidePlayed: 
+                cameraAnimator.play("camera_slide");
+                cameraslidePlayed = true;
+            waterRising = false;
+            getScore();
+            var timer:SceneTreeTimer = get_tree().create_timer(1.0)
+            timer.timeout.connect(gameOver)  
 
-        $Water.position.y = lerp(waterStartY, 0.05, waterPosition)
-        # if $Water.position.y < 0.05:
-        #     $Water.position.y += 0.3 * delta;
+    $Water.position.y = lerp(waterStartY, 0.05, Globals.waterLevel)
+    $Cursor.position.y = lerp(cursorStartY, 3.0, Globals.waterLevel)
+
+func gameOver():
+    getScore();
+    print("score ", Globals.score);
+    var summary :Summarybox = $Summarybox;
+    summary.visible = true;
+    summary.progressbartween();
 
 func turnOnTap():
     sponges = $Sponges.get_children()
+    Globals.water_risen = true;
     waterRising = true;
-
-    for sponge in sponges:
-        sponge = sponge.get_child(0);
-        if sponge is Sponge:
-            sponge.waterUp = true;
 
 func getScore():
     var resolution = 100;
@@ -58,7 +73,9 @@ func getScore():
             if (len(result) > 0):
                 if result["collider"].name != "FloorDetection": score += 1;
 
-    print(score / (resolution * resolution) * 100);
+    score = score / (resolution * resolution) * 100;
+    print(score);
+    Globals.score = score;
 
 func _physics_process(delta: float) -> void:
     Globals.time_elapsed += delta;
@@ -68,44 +85,45 @@ func _physics_process(delta: float) -> void:
 
 func _input(event):
     if event is InputEventKey:
-        if event.keycode == KEY_W: turnOnTap();
-        if event.keycode == KEY_R: get_tree().reload_current_scene()
+        if event.keycode == KEY_W: 
+            turnOnTap();
+        if event.keycode == KEY_R and !Input.is_key_pressed(KEY_R): Globals.resetWater();
 
-    if event is InputEventMouseMotion:
-    # if event.is_pressed():
-        var mouse_pos = get_viewport().get_mouse_position()
-        var ray_length = 100
-        var from = camera.project_ray_origin(mouse_pos)
-        var to = from + camera.project_ray_normal(mouse_pos) * ray_length
-        var space = get_world_3d().direct_space_state
-        var ray_query = PhysicsRayQueryParameters3D.new()
-        ray_query.from = from
-        ray_query.to = to
-        ray_query.collision_mask = pow(2, 10-1);
-        # ray_query.collide_with_areas = true
-        # raycast_result = space.intersect_ray(ray_query)
-        if len(space.intersect_ray(ray_query)) > 0:
-            $Cursor.position.x = space.intersect_ray(ray_query)["position"]["x"];
-            $Cursor.position.z = space.intersect_ray(ray_query)["position"]["z"];
-            $Cursor.visible = true;
-        else:
-            $Cursor.visible = false;
+    if Globals.waterLevel == 0 and !waterRising:
+        if event is InputEventMouseMotion:
+            var mouse_pos = get_viewport().get_mouse_position()
+            var ray_length = 100
+            var from = camera.project_ray_origin(mouse_pos)
+            var to = from + camera.project_ray_normal(mouse_pos) * ray_length
+            var space = get_world_3d().direct_space_state
+            var ray_query = PhysicsRayQueryParameters3D.new()
+            ray_query.from = from
+            ray_query.to = to
+            ray_query.collision_mask = pow(2, 10-1);
+            # ray_query.collide_with_areas = true
+            # raycast_result = space.intersect_ray(ray_query)
+            if len(space.intersect_ray(ray_query)) > 0:
+                $Cursor.position.x = space.intersect_ray(ray_query)["position"]["x"];
+                $Cursor.position.z = space.intersect_ray(ray_query)["position"]["z"];
+                $Cursor.visible = true;
+            else:
+                $Cursor.visible = false;
 
-    if event is InputEventMouseButton:
-        if Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT):
-            getScore();
-        elif Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-            var random = randi();
-            if len($Cursor.touching) <= 1 and !waterRising:
-                var newSponge : Node3D;
-                if random % 2: newSponge = $SpongePrime.duplicate();
-                else: newSponge = $RabbitPrime.duplicate();
-                newSponge.visible = true;
-                newSponge.position = $Cursor.position;
-                newSponge.position.y = 0.087;
-                newSponge.rotation_degrees.y = placementAngle;
-                $Sponges.add_child(newSponge);
+        if event is InputEventMouseButton:
+            if Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT):
+                getScore();
+            elif Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+                var random = randi();
+                if len($Cursor.touching) <= 1 and Globals.waterLevel == 0:
+                    var newSponge : Node3D;
+                    if random % 2: newSponge = $SpongePrime.duplicate();
+                    else: newSponge = $RabbitPrime.duplicate();
+                    newSponge.visible = true;
+                    newSponge.position = $Cursor.position;
+                    newSponge.position.y = 0.087;
+                    newSponge.rotation_degrees.y = placementAngle;
+                    $Sponges.add_child(newSponge);
 
-                placementAngle = randf() * 360;
+                    placementAngle = randf() * 360;
 
-                spongeCount -= 1;
+                    spongeCount -= 1;

@@ -1,0 +1,34 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+<<<<<<< HEAD
+uid="uid://c8s1c4dg8bamm"
+path="res://.godot/imported/563189__fmaudio__squeezing-sponge-filled-with-water-rapidly-2.wav-fb86a178dc8cedc00e0c5a1062166854.sample"
+
+[deps]
+
+source_file="res://assets/sfx/563189__fmaudio__squeezing-sponge-filled-with-water-rapidly-2.wav"
+dest_files=["res://.godot/imported/563189__fmaudio__squeezing-sponge-filled-with-water-rapidly-2.wav-fb86a178dc8cedc00e0c5a1062166854.sample"]
+=======
+uid="uid://ce0lm0cdn7l6s"
+path="res://.godot/imported/563189__fmaudio__squeezing-sponge-filled-with-water-rapidly-2.wav-9c8416d284cc1c228dda088de6da1809.sample"
+
+[deps]
+
+source_file="res://Assets/sfx/563189__fmaudio__squeezing-sponge-filled-with-water-rapidly-2.wav"
+dest_files=["res://.godot/imported/563189__fmaudio__squeezing-sponge-filled-with-water-rapidly-2.wav-9c8416d284cc1c228dda088de6da1809.sample"]
+>>>>>>> origin/connor
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
