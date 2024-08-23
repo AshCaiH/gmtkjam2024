@@ -33,7 +33,7 @@ _subresources={
 "materials": {
 "Material": {
 "use_external/enabled": true,
-"use_external/path": "res://assets/models/Sponge.tres"
+"use_external/path": "res://assets/models/Sponge2.tres"
 }
 },
 "nodes": {

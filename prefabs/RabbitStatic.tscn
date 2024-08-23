@@ -5,7 +5,7 @@
 [ext_resource type="Material" uid="uid://ckmj3j3t0e08g" path="res://assets/models/Sponge.tres" id="3_665b1"]
 [ext_resource type="PackedScene" uid="uid://dsf6h2akog6kg" path="res://prefabs/RabbitStaticMesh.tscn" id="4_tmmg8"]
 
-[node name="rabbit" instance=ExtResource("1_7x4uw")]
+[node name="rabbit2" instance=ExtResource("1_7x4uw")]
 
 [node name="mesh-rigid" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0329661, -0.0164306, 0.0588797)

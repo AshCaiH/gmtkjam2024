@@ -72,7 +72,6 @@ scale = Vector2(0.66, 0.66)
 texture = ExtResource("3_o7nx1")
 
 [node name="Control" parent="." instance=ExtResource("5_tp2dp")]
-visible = false
 custom_minimum_size = Vector2(300, 120)
 offset_left = 958.0
 offset_top = 24.0

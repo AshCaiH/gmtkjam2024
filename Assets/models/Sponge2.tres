@@ -1,0 +1,26 @@
+[gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://2lm3yd308wnq"]
+
+[ext_resource type="Shader" path="res://materials/Cryptomatte.gdshader" id="1_d3ohn"]
+[ext_resource type="Texture2D" uid="uid://dox1ces3o28bp" path="res://materials/Sponge_001_COLOR.jpg" id="2_mrlle"]
+[ext_resource type="Texture2D" uid="uid://c5etf0g2kc0gd" path="res://materials/Sponge_001_NORM.jpg" id="3_55cbj"]
+[ext_resource type="Texture2D" uid="uid://vdhdn7wjm0kr" path="res://materials/Sponge_001_ROUGH.jpg" id="4_yx1y8"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_d3ohn")
+shader_parameter/albedo = Color(0.621524, 0.621524, 0.621524, 1)
+shader_parameter/point_size = null
+shader_parameter/roughness = null
+shader_parameter/metallic_texture_channel = null
+shader_parameter/specular = null
+shader_parameter/metallic = null
+shader_parameter/normal_scale = null
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/uv2_scale = Vector3(1, 1, 1)
+shader_parameter/uv2_offset = null
+shader_parameter/cull_mask = 9
+shader_parameter/cryptomatte = Color(0.809943, 0.65221, 0, 1)
+shader_parameter/texture_albedo = ExtResource("2_mrlle")
+shader_parameter/texture_roughness = ExtResource("4_yx1y8")
+shader_parameter/texture_normal = ExtResource("3_55cbj")

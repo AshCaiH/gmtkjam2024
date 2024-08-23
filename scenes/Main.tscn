@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://dbrsc04uan3vi"]
+[gd_scene load_steps=38 format=3 uid="uid://dbrsc04uan3vi"]
 
 [ext_resource type="Script" path="res://scripts/Main.gd" id="1_rg8f5"]
 [ext_resource type="PackedScene" uid="uid://d118bv6ro5bi8" path="res://prefabs/Rabbit.tscn" id="2_6fk1l"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://rkg8p3noii20" path="res://materials/marble_mosaic_tiles_diff_1k.jpg" id="4_fblpx"]
 [ext_resource type="Texture2D" uid="uid://dmpkgpm2de0gb" path="res://materials/marble_mosaic_tiles_nor_gl_1k.png" id="5_dykrr"]
 [ext_resource type="Texture2D" uid="uid://d1gk6ctjcvtfq" path="res://materials/marble_mosaic_tiles_rough_1k.png" id="6_o7rfl"]
+[ext_resource type="Shader" path="res://materials/Cryptomatte.gdshader" id="6_yekg7"]
 [ext_resource type="PackedScene" uid="uid://bbv0spkb8ld7s" path="res://assets/models/light_shaft.tscn" id="8_8844k"]
 [ext_resource type="Script" path="res://scripts/Cursor.gd" id="9_oteo0"]
 [ext_resource type="Texture2D" uid="uid://42ih7tt4twt2" path="res://materials/floor_tiles_02_diff_1k.jpg" id="9_wa0r3"]
@@ -21,11 +22,11 @@
 [ext_resource type="PackedScene" uid="uid://cp2pnmyox377o" path="res://prefabs/shampoo.tscn" id="16_lk6xc"]
 [ext_resource type="PackedScene" uid="uid://pu02paqc4g71" path="res://prefabs/tub.tscn" id="17_p6chu"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_sswqg"]
-size = Vector3(2, 0.5, 2)
-subdivide_width = 50
-subdivide_height = 50
-subdivide_depth = 50
+[sub_resource type="ViewportTexture" id="ViewportTexture_obfsj"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="Environment" id="Environment_bc4co"]
+background_mode = 1
 
 [sub_resource type="Animation" id="Animation_3njgp"]
 resource_name = "CameraStart"
@@ -116,6 +117,12 @@ _data = {
 "camera_slide": SubResource("Animation_k2a4m")
 }
 
+[sub_resource type="BoxMesh" id="BoxMesh_sswqg"]
+size = Vector3(2, 0.5, 2)
+subdivide_width = 50
+subdivide_height = 50
+subdivide_depth = 50
+
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_6oywk"]
 panorama = ExtResource("4_7c8vk")
 
@@ -135,15 +142,25 @@ reflected_light_source = 2
 subdivide_width = 10
 subdivide_depth = 10
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e71b8"]
-albedo_texture = ExtResource("4_fblpx")
-metallic = 0.72
-metallic_specular = 1.0
-roughness = 0.64
-roughness_texture = ExtResource("6_o7rfl")
-normal_enabled = true
-normal_texture = ExtResource("5_dykrr")
-uv1_scale = Vector3(2, 2, 2)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y0p40"]
+render_priority = 0
+shader = ExtResource("6_yekg7")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/point_size = 1.0
+shader_parameter/roughness = 0.64
+shader_parameter/metallic_texture_channel = null
+shader_parameter/specular = 1.0
+shader_parameter/metallic = 0.72
+shader_parameter/normal_scale = 1.0
+shader_parameter/uv1_scale = Vector3(2, 2, 2)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(1, 1, 1)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)
+shader_parameter/cull_mask = 9
+shader_parameter/cryptomatte = Color(0.12981, 0.370516, 0.469839, 1)
+shader_parameter/texture_albedo = ExtResource("4_fblpx")
+shader_parameter/texture_roughness = ExtResource("6_o7rfl")
+shader_parameter/texture_normal = ExtResource("5_dykrr")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fwfob"]
 size = Vector3(2, 0.1, 2)
@@ -164,8 +181,54 @@ size = Vector3(2.36353, 1, 0.155579)
 [node name="Game" type="Node3D"]
 script = ExtResource("1_rg8f5")
 
+[node name="Control" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1084.0
+offset_top = 36.0
+offset_right = 1252.0
+offset_bottom = 205.0
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -132.0
+offset_top = -99.5
+offset_right = 96.0
+offset_bottom = 128.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("ViewportTexture_obfsj")
+expand_mode = 2
+
+[node name="SubViewport" type="SubViewport" parent="."]
+
+[node name="TopCamera" type="Camera3D" parent="SubViewport"]
+transform = Transform3D(-1, 8.74228e-08, 3.82137e-15, 0, -4.37114e-08, 1, 8.74228e-08, 1, 4.37114e-08, 0, 2.728, 0)
+visible = false
+cull_mask = 1047808
+environment = SubResource("Environment_bc4co")
+projection = 1
+size = 2.1
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-1, -1.30951e-06, 2.17079e-06, 0, 0.856267, 0.516533, -2.53518e-06, 0.516533, -0.856267, 0, 1.28, -2.126)
+current = true
+fov = 39.7
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera3D"]
+reset_on_save = false
+libraries = {
+"": SubResource("AnimationLibrary_p18yc")
+}
+
 [node name="Water" type="MeshInstance3D" parent="."]
-transform = Transform3D(1.00675, 0, 0, 0, 0.595939, 0, 0, 0, 1.00869, 0.0151386, -0.171971, -0.0374622)
+transform = Transform3D(1.00675, 0, 0, 0, 0.595939, 0, 0, 0, 1.00869, 0, -0.172, 0)
 mesh = SubResource("BoxMesh_sswqg")
 surface_material_override/0 = ExtResource("2_tsmr1")
 
@@ -186,17 +249,6 @@ transform = Transform3D(-0.796709, 0, -0.604363, 0, 1, 0, 0.604363, 0, -0.796709
 [node name="Sponge" parent="Sponges" instance=ExtResource("4_38k4i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.163197, 0.0971629, 0.377315)
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-1, -1.41061e-07, 5.3866e-08, 0, 0.356738, 0.934204, -1.50996e-07, 0.934204, -0.356738, 0, 2.611, -1.071)
-current = true
-fov = 39.7
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera3D"]
-reset_on_save = false
-libraries = {
-"": SubResource("AnimationLibrary_p18yc")
-}
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_15veq")
 
@@ -210,9 +262,9 @@ shadow_blur = 6.238
 
 [node name="Floor" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0386156, 0)
-layers = 512
+layers = 256
 mesh = SubResource("PlaneMesh_0pkqa")
-surface_material_override/0 = SubResource("StandardMaterial3D_e71b8")
+surface_material_override/0 = SubResource("ShaderMaterial_y0p40")
 
 [node name="FloorDetection" type="StaticBody3D" parent="Floor"]
 collision_layer = 513
@@ -224,7 +276,6 @@ shape = SubResource("BoxShape3D_fwfob")
 
 [node name="Floor2" type="MeshInstance3D" parent="."]
 transform = Transform3D(4.17534, 0, 0, 0, 1, 0, 0, 0, 4.17534, -0.344756, -0.0403613, 0)
-layers = 512
 mesh = SubResource("PlaneMesh_0pkqa")
 surface_material_override/0 = SubResource("StandardMaterial3D_xlgqt")
 
@@ -247,7 +298,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.01136, 0.0410178, 0.159195)
 visible = false
 
 [node name="RabbitDeco2" parent="." instance=ExtResource("13_giq5s")]
-transform = Transform3D(-2.44343, 0, 1.14875, 0, 2.7, 0, -1.14875, 0, -2.44343, -2.69152, 0.198858, 0.86177)
+transform = Transform3D(-2.44343, 0, 1.14875, 0, 2.7, 0, -1.14875, 0, -2.44343, -2.69152, 0.052614, 0.86177)
 
 [node name="RabbitDeco" parent="." instance=ExtResource("13_giq5s")]
 transform = Transform3D(-5.93852, 0.132586, -5.79554e-09, 0, -2.59646e-07, -5.94, -0.132586, -5.93852, 2.59581e-07, -2.37228, 0.198858, -2.10394)
@@ -296,7 +347,6 @@ visible = false
 fov = 23.7
 
 [node name="Summarybox" parent="." instance=ExtResource("11_8ugpv")]
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
